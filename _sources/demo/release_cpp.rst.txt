@@ -1,0 +1,18 @@
+C++ Samples
+===========
+
+resnet50
+________
+
+**Introduction**
+
+This sample program implements:
+
+1). Use "get_bmodel" to obtain models and images from BITMAIN's official website;
+
+2). Convert resnet50(caffe model) into bmodel;
+
+3). Use C++ interfaces of SAIL to do inference on TPU.
+
+You can execute the script of "test_resnet50.sh" to finish the pipeline directly.
+

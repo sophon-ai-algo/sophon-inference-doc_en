@@ -1,0 +1,46 @@
+Python Samples
+==============
+
+Run YoloV3
+__________
+
+**Introduction**
+
+This sample program implements:
+
+1). Use "get_bmodel" to obtain models and images from BITMAIN's official website;
+
+2). Convert yolov3(caffe model) to bmodel;
+
+3). Use python interfaces of SAIL to do inference on TPU.
+
+You can execute the script of "test_yolov3_caffe.sh" to finish the pipeline directly.
+
+Run Sophon Algokit
+__________________
+
+**Introduction**
+
+This sample program implements:
+
+1). Use "get_bmodel" to obtain models and images from BITMAIN's official website;
+
+2). Convert mobilenetv1(caffe model) and mobilenetv1_ssd (caffe model) to bmodels;
+
+3). Use Algokit to do inference on TPU.
+
+You can execute the script of "test_sophon_algokit.sh" to finish the pipeline directly.
+
+Model Split
+___________
+
+**Introduction**
+
+This sample program implements:
+
+1). Use "AutoSplit" to automatically split deeplabv3_mobilenetv2(tensorflow model) into sub_models and convert some of them to bmodels;
+
+2). Use "AutoRunner" to do inference on TPU.
+
+You can execute the script of "test_model_split.sh" to finish the pipeline directly.
+

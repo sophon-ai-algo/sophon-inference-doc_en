@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction of Sophon Inference &mdash; SophonInference  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sophon Inference Installation" href="install.html" />
+    <link rel="prev" title="Sophon Inference User Manual" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SophonInference
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction of  Sophon Inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bmnnsdk">BMNNSDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#model-deployment">Model deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sophon-inference">Sophon Inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Sophon Inference Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../module/sail.html">SAIL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/sail_cpp.html">SAIL C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/sail_python.html">SAIL Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/autosplit.html">AutoSplit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/autorunner.html">AutoRunner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/algokit.html">Algokit</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demo/release_cpp.html">C++ Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/release_python.html">Python Samples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SophonInference</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Introduction of  Sophon Inference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/quickstart/abstract.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-of-sophon-inference">
+<h1>Introduction of  Sophon Inference<a class="headerlink" href="#introduction-of-sophon-inference" title="Permalink to this headline">¶</a></h1>
+<p>Sophon Inference is an open source tool developed based on Bitmain’s original deep learning development kit “BMNNSDK”.
+It is designed to help you quickly deploy your model on the Sophon TPUs.(<a class="reference external" href="https://sophon.ai">https://sophon.ai</a>)</p>
+<img alt="../_images/sophon_inference.png" src="../_images/sophon_inference.png" />
+<p>The figure above shows the overall structure of Sophon Inference and its dependencies on BMNNSDK.
+Below we explain the concepts mentioned in the above graphic.</p>
+<div class="section" id="bmnnsdk">
+<h2>BMNNSDK<a class="headerlink" href="#bmnnsdk" title="Permalink to this headline">¶</a></h2>
+<p>BMNNSDK is the original deep learning development toolkit of Bitmain.
+It is mainly composed of modules such as BMDriver, BMCompiler, BMRuntime, BMDNN, BMCV and BMLib.</p>
+<p><strong>BMDriver</strong>
+:It is the driver for the Sophon TPU and is installed into your operating system kernel in an “insmod” manner.</p>
+<p><strong>BMCompiler</strong>
+:It is a set of model compilation tools that compile your trained deep learning models into instructions that can be loaded and executed by the Sophon TPU.
+These instructions will be stored into to a file with the suffix “bmodel”.</p>
+<p><strong>BMRuntime</strong>
+:It provides interfaces to load the “bmodel” file onto the Sophon TPU and drive the TPU chip to implement reasoning.</p>
+<p><strong>BMDNN</strong>
+:It provides layer/operator computation through TPU.</p>
+<p><strong>BMCV</strong>
+:It can drive the TPU for image processing.</p>
+<p><strong>BMLib</strong>
+:Provides basic interfaces, which can control TPU memory.</p>
+<p>If you have any other questions about BMNNSDK, please refer to the “NNToolChain User Manual” and the “BMCV User Manual”.</p>
+</div>
+<div class="section" id="model-deployment">
+<h2>Model deployment<a class="headerlink" href="#model-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Model deployment includes two steps: model offline compilation and online reasoning.</p>
+<p><strong>a).Offline Compilation</strong></p>
+<p>Use the BMCompiler to compile the deep learning model into TPU instructions and save them into the bmodel file.</p>
+<p>BMCompiler is a set of model compilation tools that correspond to different deep learning frameworks.
+The current BMNNSDK implements four compilation tools to support four deep learning frameworks.
+They are bmnetc(for Caffe), bmnett(for Tensorflow), bmnetp(for Pytorch), bmnetm(for Mxnet)。</p>
+<p>Model compilation does not require sophon TPU,
+and does not depend on modules other than BMCompiler in BMNNSDK.</p>
+<p><strong>b).Online Reasoning</strong></p>
+<p>Load the “bmodel” file into the TPU using the interfaces provided in BMRuntime,
+and drive the TPU to execute the instructions in the bmodel to complete the reasoning.</p>
+<p>To implement the online reasoning process, you need to install at least Sophon TPU, BMDriver, BMruntime.</p>
+</div>
+<div class="section" id="sophon-inference">
+<h2>Sophon Inference<a class="headerlink" href="#sophon-inference" title="Permalink to this headline">¶</a></h2>
+<p>Sophon Inference includes AutoSplit, Algokit, AutoRunner, SAIL.
+We provide python/c++ interfaces and sample programs, you can choose the appropriate calling method according to your needs.</p>
+<p>For users using Python, Sophon Inference provides three modules: SAIL, AutoDeploy, and Algokit.</p>
+<p><strong>SAIL</strong>
+:BMRuntime, BMCV, BMDNN and BMLib in BMNNSDK are encapsulated. C++/python interfaces are provided. And can be used to
+a).Drive the TPU to reason the compiled deep learning model (bmodel);
+b).Use Sophon TPU for image and video processing.
+For detailed introduction of model conversion and image/video processing, please refer to “NNToolChain User Documentation” and “BMCV User Documentation”.</p>
+<p><strong>AutoSplit</strong>
+:One-click model splitting and compilation tool for models that cannot be fully deployed to the Sophon TPU, Python interfaces are provided, can automatically
+a).Divide the original model into several sub-models;
+b).Compile the submodels that can be deployed on the Sophon TPU;
+Current support models trained by tensorflow and mxnet.</p>
+<p><strong>AutoRunner</strong>
+:Usually used with AutoSplit, it can also be used alone. C++/Python interfaces are provided.
+The provided interface can implement the reasoning of the sub-model sequence after splitting or compilation.
+The inference interface of the specific deep learning framework and SAIL are called in AutoRunner to implement the reasoning on the CPU and TPU respectively.
+Currently supports tensorflow/mxnet.</p>
+<p><strong>Algokit</strong>
+:A python algorithm framework , which encapsulated the functions of SAIL and AutoRunner, for application deployment. includes:
+a). Template codes for user reference;
+b). Usages for users to add algorithm applications.
+Currently, application examples in the field of computer vision such as image classification, detection, and segmentation are provided.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Sophon Inference Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Sophon Inference User Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Sophon
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
