@@ -184,7 +184,7 @@ get_bmodel -<span class="o">[</span>h<span class="o">]</span> <span class="o">[<
 <p>Using AutoSplit to split model, let you split model simply.</p>
 <p>usage:</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>split_tf_model  -p your platform:tensorflow/mxnet, now <span class="k">for</span> tensorflow only.
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>split_tf_model  -p your tpu version, BM1682 or BM1684.
                 -t target directory to save splitted models.
                 -m model path
                 -w weight path
@@ -200,9 +200,9 @@ get_bmodel -<span class="o">[</span>h<span class="o">]</span> <span class="o">[<
 <p>Check if the results produces by splitted models are equal to original results.</p>
 <p>usage:</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>test_splitted_tf_model -p input model dl platform:tensorflow/mxnet, now <span class="k">for</span> tensorflow only.
-                       -m input tfmodel path
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>test_splitted_tf_model -m input tfmodel path
                        -s input submodel path
+                       -c <span class="m">0</span> or <span class="m">1</span>, <span class="k">if</span> you are using cmodel on x86
 </pre></div>
 </div>
 </div></blockquote>

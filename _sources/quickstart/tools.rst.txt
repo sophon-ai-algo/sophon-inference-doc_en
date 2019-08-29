@@ -32,7 +32,7 @@ usage:
 
     .. code-block:: shell
 
-       split_tf_model  -p your platform:tensorflow/mxnet, now for tensorflow only.
+       split_tf_model  -p your tpu version, BM1682 or BM1684.
                        -t target directory to save splitted models.
                        -m model path
                        -w weight path
@@ -52,8 +52,8 @@ usage:
 
     .. code-block:: shell
 
-       test_splitted_tf_model -p input model dl platform:tensorflow/mxnet, now for tensorflow only.
-                              -m input tfmodel path
+       test_splitted_tf_model -m input tfmodel path
                               -s input submodel path
+                              -c 0 or 1, if you are using cmodel on x86
 
 
