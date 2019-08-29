@@ -1,94 +1,98 @@
-Introduction of  Sophon Inference
-=================================
+图解 Sophon Inference
+=====================
 
-Sophon Inference is an open source tool developed based on Bitmain's original deep learning development kit "BMNNSDK".
-It is designed to help you quickly deploy your model on the Sophon TPUs.(https://sophon.ai)
+Sophon Inference 是基于比特大陆原创深度学习开发工具包 BMNNSDK 开发的一套开源工具，
+旨在帮助您快速地将模型部署于 Sophon TPU 上。(https://sophon.ai)
 
 .. image:: ../../sophon_inference.png
 
-The figure above shows the overall structure of Sophon Inference and its dependencies on BMNNSDK.
-Below we explain the concepts mentioned in the above graphic.
+上图展示了 Sophon Inference 的整体结构以及它与 BMNNSDK 的依赖关系。
+下面我们对上图中概念进行解释。
 
 BMNNSDK
 _______
 
-BMNNSDK is the original deep learning development toolkit of Bitmain. 
-It is mainly composed of modules such as BMDriver, BMCompiler, BMRuntime, BMDNN, BMCV and BMLib.
+BMNNSDK 是比特大陆原创的深度学习开发工具包，主要由BMDriver、BMCompiler、BMRuntime、BMDNN、BMCV、BMLib 等模块组成。
+其中：
 
 **BMDriver**
-:It is the driver for the Sophon TPU and is installed into your operating system kernel in an "insmod" manner.
+：是 Sophon TPU 的驱动程序，采用 “insmod” 的方式安装到您的操作系统内核中。
 
 **BMCompiler**
-:It is a set of model compilation tools that compile your trained deep learning models into instructions that can be loaded and executed by the Sophon TPU.
-These instructions will be stored into to a file with the suffix "bmodel".
+：是一组模型编译工具，它能将您训练好的深度学习模型编译成可被 Sophon TPU 加载并执行的指令，
+并将这些指令保存到一个后缀名为 “bmodel” 的文件中。
 
 **BMRuntime**
-:It provides interfaces to load the "bmodel" file onto the Sophon TPU and drive the TPU chip to implement reasoning.
+：提供的接口可以将 “bmodel” 文件加载到 Sophon TPU 上并驱动 TPU 芯片实现推理。
 
 **BMDNN**
-:It provides layer/operator computation through TPU.
+：可以对 layer/operator 上驱动 TPU 芯片进行计算。
 
 **BMCV**
-:It can drive the TPU for image processing.
+：可以驱动 TPU 进行图像处理。
 
 **BMLib**
-:Provides basic interfaces, which can control TPU memory.
+：底层接口，与 TPU 内存交互。
 
-If you have any other questions about BMNNSDK, please refer to the "NNToolChain User Manual" and the "BMCV User Manual".
+如果您还有关于BMNNSDK的任何疑问，请参考《NNToolChain用户手册》、《BMCV用户手册》。
 
-Model deployment
-________________
+模型部署
+________
 
-Model deployment includes two steps: model offline compilation and online reasoning.
+模型部署包含模型离线编译与在线推理两个步骤。
 
-**a).Offline Compilation**
+**a).离线编译**
 
-Use the BMCompiler to compile the deep learning model into TPU instructions and save them into the bmodel file.
+使用 BMCompiler 将深度学习模型编译为 TPU 指令并保存在 bmodel 文件中。
 
-BMCompiler is a set of model compilation tools that correspond to different deep learning frameworks.
-The current BMNNSDK implements four compilation tools to support four deep learning frameworks.
-They are bmnetc(for Caffe), bmnett(for Tensorflow), bmnetp(for Pytorch), bmnetm(for Mxnet)。
+BMCompiler 是一组模型编译工具，分别对应了不同的深度学习框架，
+目前的BMNNSDK中实现了4个编译工具用来支持4种深度学习框架。
+它们分别是 bmnetc(Caffe)、bmnett(Tensorflow)、bmnetp(Pytorch)、bmnetm(Mxnet)。
 
-Model compilation does not require sophon TPU,
-and does not depend on modules other than BMCompiler in BMNNSDK.
+如果TPU不支持模型中的个别OP，则需要将模型切分成多个子模型。
+其中部分子模型在TPU上运行，其余子模型在CPU上运行。
+目前支持对TensorFlow、MXNet的模型进行切分，提供python api。
 
-**b).Online Reasoning**
+模型编译不须插卡，不依赖 BMNNSDK 中除 BMCompiler 外的其它模块。
 
-Load the "bmodel" file into the TPU using the interfaces provided in BMRuntime,
-and drive the TPU to execute the instructions in the bmodel to complete the reasoning.
+**b).在线推理**
 
-To implement the online reasoning process, you need to install at least Sophon TPU, BMDriver, BMruntime.
+使用 BMRuntime 中提供的接口加载 bmodel 文件至 TPU，
+并驱动 TPU 执行 bmodel 中的指令，完成推理。
+
+对于切分后需要在CPU上运行的子模型，将调用原框架的运行时。
+目前提供了将各子模型串通运行的python接口，未来将提供C++接口.
+
+若要实现在线推理过程，您至少需要安装 Sophon TPU、BMDriver、BMruntime。
 
 Sophon Inference
 ________________
 
-Sophon Inference includes AutoSplit, Algokit, AutoRunner, SAIL.
-We provide python/c++ interfaces and sample programs, you can choose the appropriate calling method according to your needs.
+Sophon Inference 包括上图中的 AutoSplit、AlgoKit、AutoRunner、SAIL。
+我们提供了python/c++的接口与示例程序，您可以根据您的需要选择合适的调用方式。
 
-For users using Python, Sophon Inference provides three modules: SAIL, AutoDeploy, and Algokit.
+针对使用python的用户，SophonInference 提供了SAIL、AutoDeploy、Algokit三个模块：
 
 **SAIL**
-:BMRuntime, BMCV, BMDNN and BMLib in BMNNSDK are encapsulated. C++/python interfaces are provided. And can be used to
-a).Drive the TPU to reason the compiled deep learning model (bmodel);
-b).Use Sophon TPU for image and video processing.
-For detailed introduction of model conversion and image/video processing, please refer to "NNToolChain User Documentation" and "BMCV User Documentation".
+：对 BMNNSDK 中的 BMRuntime、BMCV、BMDNN、BMLib进行了封装，提供C++/Python接口，可用于
+a).驱动 TPU 对经过编译后的深度学习模型进行推理;
+b).使用Sophon TPU做图像、视频处理;
+模型转化以及图像、视频处理的详细介绍请参考《NNToolChain用户文档》与《BMCV用户文档》。
 
 **AutoSplit**
-:One-click model splitting and compilation tool for models that cannot be fully deployed to the Sophon TPU, Python interfaces are provided, can automatically
-a).Divide the original model into several sub-models;
-b).Compile the submodels that can be deployed on the Sophon TPU;
-Current support models trained by tensorflow and mxnet.
+：一键式的模型切分与编译工具，主要面向无法完整部署到Sophon TPU上的模型，提供Python接口，可自动化地：
+a).将原始模型切分为若干子模型;
+b).对其中可以部署到Sophon TPU上的子模型进行编译;
+目前支持tensorflow/mxnet。
 
 **AutoRunner**
-:Usually used with AutoSplit, it can also be used alone. C++/Python interfaces are provided. 
-The provided interface can implement the reasoning of the sub-model sequence after splitting or compilation. 
-The inference interface of the specific deep learning framework and SAIL are called in AutoRunner to implement the reasoning on the CPU and TPU respectively. 
-Currently supports tensorflow/mxnet.
+：通常与 AutoSplit 一起使用，也可以单独使用。
+提供的接口可以实现切分后或编译后的子模型序列的推理, 目前只提供python接口，未来将提供C++接口。
+内部分别调用的特定深度学习框架的推理接口与 SAIL，分别实现 CPU 与 TPU 上的推理。
+目前支持 tensorflow/mxnet。
 
 **Algokit**
-:A python algorithm framework , which encapsulated the functions of SAIL and AutoRunner, for application deployment. includes:
-a). Template codes for user reference; 
-b). Usages for users to add algorithm applications. 
-Currently, application examples in the field of computer vision such as image classification, detection, and segmentation are provided.
-
-
+：面向应用部署的 python 算法框架，可用于：
+a). 应用代码编写的模板供用户参考;
+b). 基础算法框架，方便用户添加算法应用。
+目前提供了图像分类、检测、分割等计算机视觉领域的应用示例，依赖于 SAIL 和 AutoRunner 提供的模型部署相关的接口。

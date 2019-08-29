@@ -1,7 +1,7 @@
 SAIL Python API
 ===============
 
-SAIL use "pybind11" to wrap python interfaces, support python3.5.
+SAIL 使用 pybind11 封装了一套 python 接口, 支持python3.5。
 
 sail.Handle
 ___________

@@ -4,7 +4,7 @@ SAIL C++ API
 Handle
 _____
 
-**1). Handle Constructor**
+**1). Handle 构造函数**
     .. code-block:: c++
 
         @brief Constructor using existed bm_handle_t.
@@ -13,7 +13,7 @@ _____
 
         Handle(bm_handle_t handle);
 
-**2). Handle Constructor**
+**2). Handle 构造函数**
     .. code-block:: c++
 
         @brief Constructor with device id.
@@ -41,7 +41,7 @@ _____
 Tensor
 _____
 
-**1). Tensor Constructor**
+**1). Tensor 构造函数**
     .. code-block:: c++
 
         @brief Constructor only allocates system memory of the tensor.
@@ -50,7 +50,7 @@ _____
 
         Tensor(const std::vector<int>& shape);
 
-**2). Tensor Constructor**
+**2). Tensor 构造函数**
     .. code-block:: c++
 
         @brief Constructor allocates system memory and device memory of the tensor.
@@ -62,7 +62,7 @@ _____
             Handle                  handle,
             const std::vector<int>& shape);
 
-**3). Tensor Constructor**
+**3). Tensor 构造函数**
     .. code-block:: c++
 
         @brief Constructor only allocates device memory of the tensor.
@@ -76,7 +76,7 @@ _____
           const std::vector<int>& shape,
           int                     bytes);
 
-**4). Tensor Constructor**
+**4). Tensor 构造函数**
     .. code-block:: c++
 
         @brief Constructor wrapper existied device memory.
@@ -90,7 +90,7 @@ _____
             const std::vector<int>& shape,
             bm_device_mem_t*        data);
 
-**5). Tensor Constructor**
+**5). Tensor 构造函数**
     .. code-block:: c++
 
         @brief Common constructor.\n
@@ -125,7 +125,7 @@ _____
             Dtype*                  data,
             bm_device_mem_t*        dev_mem_);
 
-**6). Tensor Copy Constructor**
+**6). Tensor 复制构造函数**
     .. code-block:: c++
 
         @brief Copy constructor.
@@ -134,7 +134,7 @@ _____
 
         Tensor(const Tensor& tensor);
 
-**7). Tensor Assign Function**
+**7). Tensor 赋值函数**
     .. code-block:: c++
 
         @brief Assignment function.
@@ -289,7 +289,7 @@ ______
 Engine
 ______
 
-**1). Engine Constructor**
+**1). Engine 构造函数**
     .. code-block:: c++
 
         @brief Constructor using default input shapes.
@@ -305,7 +305,7 @@ ______
             const std::string& tpus,
             IOMode             mode);
 
-**2). Engine Constructor**
+**2). Engine 构造函数**
     .. code-block:: c++
 
         @brief Constructor which loads bmodel from system memory.
@@ -323,7 +323,7 @@ ______
             const std::string& tpus,
             IOMode             mode);
 
-**3). Engine Copy Constructor**
+**3). Engine 复制构造函数**
     .. code-block:: c++
 
         @brief Copy constructor.
@@ -332,7 +332,7 @@ ______
 
         Engine(const Engine& other);
 
-**4). Engine Assign Function**
+**4). Engine 复制构造函数**
     .. code-block:: c++
 
         @brief Assignment function.
@@ -575,7 +575,7 @@ ______
 Bmdnn
 _____
 
-**1). Bmdnn Constructor**
+**1). Bmdnn 构造函数**
     .. code-block:: c++
       
        @brief Constructor.
@@ -708,7 +708,7 @@ _____
 Bmcv
 ____
 
-**1). Bmcv Constructor**
+**1). Bmcv 构造函数**
     .. code-block:: c++
 
         @brief Constructor.
@@ -845,4 +845,3 @@ ____
         int bgrsplit(
             Tensor<float>&             input,
             Tensor<float>&             output);
-
