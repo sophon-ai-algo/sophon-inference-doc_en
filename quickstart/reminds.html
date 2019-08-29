@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>C++ Samples Using BMNNSDK &mdash; SophonInference  documentation</title>
+  <title>Reminds &mdash; SophonInference  documentation</title>
   
 
   
@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Useful Tools" href="tools.html" />
+    <link rel="prev" title="Sophon Inference Installation" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -78,11 +80,14 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart/abstract.html">Introduction of  Sophon Inference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart/install.html">Sophon Inference Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart/reminds.html">Reminds</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart/tools.html">Useful Tools</a></li>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="abstract.html">Introduction of  Sophon Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Sophon Inference Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reminds</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#choices-of-precision">Choices of Precision</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../module/sail.html">SAIL</a></li>
@@ -93,8 +98,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../module/algokit.html">Algokit</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="release_cpp.html">C++ Samples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="release_python.html">Python Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/release_cpp.html">C++ Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/release_python.html">Python Samples</a></li>
 </ul>
 
             
@@ -140,13 +145,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>C++ Samples Using BMNNSDK</li>
+      <li>Reminds</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/demo/cpp.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/quickstart/reminds.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,44 +164,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="c-samples-using-bmnnsdk">
-<h1>C++ Samples Using BMNNSDK<a class="headerlink" href="#c-samples-using-bmnnsdk" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="vpu-decode">
-<h2>VPU decode<a class="headerlink" href="#vpu-decode" title="Permalink to this headline">¶</a></h2>
-<p><strong>Introduction</strong></p>
-<p>This sample program implements reading a local video file,
-and drive the VPU hardware unit on the Sophon Deep Learning Acceleration Card to decode the video file.</p>
-<p>The program source file is located under: “samples/cpp_bmnnsdk/vpu_decode”.</p>
-<p><strong>Execution</strong></p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># -v Local video file to be decoded.</span>
-<span class="c1"># -t The number of threads that need to be opened,</span>
-<span class="c1">#    each thread independently decodes a copy of the video file.</span>
-<span class="c1"># -i The serial number of the SC3 to be used on host.</span>
-./build/bin/vpu_decode -v <span class="nv">$HOME</span>/.sophon/data/fenix5plus.mp4 -t <span class="m">1</span> -i <span class="m">0</span>
-</pre></div>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="run-inceptionv1">
-<h2>run_inceptionv1<a class="headerlink" href="#run-inceptionv1" title="Permalink to this headline">¶</a></h2>
-<p><strong>Introduction</strong></p>
-<p>This sample program implements deploying the inceptionv1 classification model on the Sophon TPU.
-The inceptionv1 comes from the caffe official model zoo.
-Since the program is written based on the native interfaces provided by BMNNSDK,
-if you have questions about the details of the interface,
-please refer to the “NNToolChain User Documentation”.</p>
-<p>The program source file is located under: “samples/cpp_bmnnsdk/run_inceptionv1”.</p>
-<p><strong>Execution</strong></p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download and convert model, generate bmodel file.</span>
-python3 tools/download_and_convert.py googlenet
-
-<span class="c1"># load bmodel，drive TPU to complete reasoning.</span>
-./build/bin/run_inceptionv1 <span class="nv">$HOME</span>/.sophon/models/googlenet_ir <span class="nv">$HOME</span>/.sophon/data/cls_imgs/cls_1.jpg
-</pre></div>
-</div>
-</div></blockquote>
+  <div class="section" id="reminds">
+<h1>Reminds<a class="headerlink" href="#reminds" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="choices-of-precision">
+<h2>Choices of Precision<a class="headerlink" href="#choices-of-precision" title="Permalink to this headline">¶</a></h2>
+<p>We now support both FP32 and INT8 computation,
+but are related to different products.</p>
+<p>If you are using SC3/SE3/SA3, only FP32 is available.
+If you are using SC5/SE5/SA5/SA6, both FP32 and INT8 are available.</p>
+<p>According to different products and precision, the APIs also have some differences.
+Some interfaces only support FP32, and some for INT8, and others for both.
+We will point out.</p>
+<p>For more information about difference products, please refer to <a class="reference external" href="https://sophon.ai">https://sophon.ai</a></p>
 </div>
 </div>
 
@@ -205,6 +184,15 @@ python3 tools/download_and_convert.py googlenet
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tools.html" class="btn btn-neutral float-right" title="Useful Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="Sophon Inference Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

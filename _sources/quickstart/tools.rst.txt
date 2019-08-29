@@ -1,29 +1,34 @@
-常用工具介绍
+Useful Tools
 ============
 
-我们在 bin 目录中提供了一些常用工具。
-其中 soc 模式中的工具是 x86 下的子集。
-目前的工具包括：
+We provided some useful tools in "sophon_inference/bin/".
+Tool that of soc mode are the subset of pcie mode.
+Current tools include:
 
 **1).get_bmodel**
 
-我们在官网上放置了一些常用的深度学习模型与测试用的图片、视频等数据，均可使用该工具进行下载。
+FP32 only.
 
-使用方式：
+We stored some widely used deep learning models on our website,
+you can use this tool to get them.
+
+usage:
 
     .. code-block:: shell
 
-       # save_path 是您需要保存的路径
-       # arg 包括 model_name, 'model_list', 'test_data', 'all' 4种选择
+       # save_path, the path you want to save the downloaded files.
+       # arg, can be one of (model_name, 'model_list', 'test_data', 'all')
        
        get_bmodel -[h] [--save_path SAVE_PATH] arg
 
 
 **2).split_tf_model**
 
-该工具调用了 AutoSplit 模块提供的模型切分接口，可让您快速体验模型切分。
+FP32 only.
 
-使用方式：
+Using AutoSplit to split model, let you split model simply.
+
+usage:
 
     .. code-block:: shell
 
@@ -39,9 +44,11 @@
 
 **3).test_splitted_tf_model**
 
-该工具可以比对原始模型与切分后模型运行结果。
+FP32 only.
 
-使用方式：
+Check if the results produces by splitted models are equal to original results.
+
+usage:
 
     .. code-block:: shell
 

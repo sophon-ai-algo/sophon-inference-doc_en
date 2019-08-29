@@ -1,0 +1,18 @@
+Reminds
+=======
+
+Choices of Precision
+____________________
+
+We now support both FP32 and INT8 computation,
+but are related to different products.
+
+If you are using SC3/SE3/SA3, only FP32 is available.
+If you are using SC5/SE5/SA5/SA6, both FP32 and INT8 are available.
+
+According to different products and precision, the APIs also have some differences.
+Some interfaces only support FP32, and some for INT8, and others for both.
+We will point out.
+
+For more information about difference products, please refer to https://sophon.ai
+

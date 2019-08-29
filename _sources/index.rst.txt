@@ -3,19 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Sophon Inference 中文文档
-=========================
+Sophon Inference User Manual
+============================
 
-**温馨提示**
+**Tips**
 
-在使用 Sophon Inference 之前，请确保您已经安装了比特大陆 Sophon-SC3 TPU 与 软件开发包 BMNNSDK;
-并且阅读了《NNToolChain用户文档》与《BMCV 用户文档》。
+Before using **"Sophon Inference"**, make sure you have installed the Bitmain Sophon-SC3 TPU and the software development kit BMNNSDK;
+And read the "NNToolChain User Documentation" and "BMCV User Documentation."
 
-**版权声明**
+**CopyRight**
 
-版权所有 © 2019 北京比特大陆科技有限公司，未经比特大陆事先
-书面许可，不得以任何形式或方式复制、传播本文档的任何内容。
-如需获取更多信息，请浏览比特大陆官方网站 www.sophon.ai。
+CopyRight © 2019 Beijing Bitmain Technology Co., Ltd.
+No part of this document may be reproduced or transmitted in any form or by any means without prior written permission from Bitmain.
+For more information, please visit www.sophon.ai.
 
 +------------+------------------+---------------+-----------------------------+
 | ___Date___ | _____Editor_____ | ___Version___ | __________Remarks__________ |
@@ -27,17 +27,18 @@ Sophon Inference 中文文档
 |            |  hong.liu        |               |                             |
 +------------+------------------+---------------+-----------------------------+
 
-Sophon Inference 快速开始
--------------------------
+Sophon Inference Quickstart
+---------------------------
 .. toctree::
    :glob:
 
    quickstart/abstract
    quickstart/install
+   quickstart/reminds
    quickstart/tools
 
-Sophon Inference 模块详解
--------------------------
+Sophon Inference Modules
+------------------------
 .. toctree::
    :glob:
 
@@ -48,15 +49,14 @@ Sophon Inference 模块详解
    module/autorunner
    module/algokit
 
-
-Sophon Inference 示例程序
--------------------------
+Sophon Inference Samples
+------------------------
 .. toctree::
    :glob:
-
-   demo/preparation-
+   
    demo/release_cpp
    demo/release_python
+   demo/preparation-
    demo/cpp-
    demo/cpp_sail-
    demo/python-

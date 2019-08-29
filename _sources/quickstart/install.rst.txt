@@ -1,45 +1,45 @@
-Sophon Inference 安装
-=====================
+Sophon Inference Installation
+=============================
 
-针对不同的应用场景，BITMAIN基于BM168x芯片提供了PCIE和SOC两种产品形态，对应于两种不同的运行模式：
+For different application scenarios, BITMAIN provides PCIE and SOC based on the BM168x chip, which corresponds to two different running modes:
 
-* PCIE模式：SDK运行于X86平台，BM168x作为PCIE接口的深度学习计算加速卡存在；
-* SOC模式：SDK独立运行于BM168x平台，支持通过千兆以太网与其他设备连接。
-
-
-BMNNSDK支持以上两种运行模式，在应用接口上完全兼容，请根据产品形态和需求下载对应的BMNNSDK进行安装。
-需要注意的是，在 SOC 模式下，BMNNSDK 中不包含 BMCompiler 模块，
-您可在 PCIE 模式下使用 BMCompiler 完成模型的离线编译(不需要安装 SC3 加速卡)，
-编译生成的 bmodel 可以在 SOC 模式下加载并运行。
-
-目前 SophonInference 支持 PCIE 模式与SOC 模式。
-对于 SOC 模式，Sophon Inference 已经预装在 Sophon SE3 产品上，
-包含了 SAIL(cpp) 的头文件与链接库文件以及 SAIL、AutoRunner、Algokit(python3)等python模块。
-对于 PCIE 模式，我们也提供了 SAIL (cpp) 的头文件与链接库文件以及 SAIL、AutoSplit、AutoRunner、Algokit(python3) 等python模块。
+* PCIE mode: The SDK runs on the X86 platform, and the BM168x acts as a deep learning acceleration card for the PCIE interface.
+* SOC mode: The SDK runs independently on the BM168x platform and supports connection to other devices via Gigabit Ethernet.
 
 
-PCIE 模式
+BMNNSDK supports the above two modes of operation and is fully compatible on the application interface.
+Please download the corresponding BMNNSDK to install according to the product form and requirements.
+It should be noted that in SOC mode, the BMCompiler module is not included in the BMNNSDK.
+You can use BMCompiler to complete offline compilation of the model in PCIE mode (no need to install SC3 accelerator card).
+The compiled bmodel can be loaded and run in SOC mode.
+
+Currently SophonInference supports PCIE mode, and the SOC mode.
+For SOC mode, Sophon Inference has already pre-installed on Sophon SE3.
+Including SAIL(cpp) and SAIL/AutoRunner/Algokit(python3).
+For PCIE mode, Sophon Inference has also provided SAIL(cpp) and SAIL/AutoSplit/AutoRunner/Algokit(python3).
+
+
+PCIE mode
 _________
 
-**a).依赖**
+**a).Requirements**
 
-硬件环境：安装了 Sophon SC3 加速卡的 X86 主机
+Hardware Environment: X86 host with Sophon SC3/SC5 accelerator card installed.
 
-操作系统：Ubuntu/CentOS/Debian
+Operating System: Ubuntu/CentOS/Debian.
 
-软件环境：安装了 PCIE 模式的 BMNNSDK
+Software Environment: : BMNNSDK with PCIE mode installed.
 
-**b).安装**
+**b).Installation**
 
     .. code-block:: shell
        
-       # 安装 Sophon Inference 的 python 包
+       # Install the python module of Sophon Inference.
        cd ${sophon_inference}/python3/x86
        pip3 install sophon_x86-1.1.3-py3-none-any.whl --user
 
-
-SOC 模式
+SOC mode
 ____________
 
-已预装。
+Already installed.
 
