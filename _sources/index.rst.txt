@@ -26,6 +26,10 @@ For more information, please visit www.sophon.ai.
 |            |  haipeng.wan     |               |                             |
 |            |  hong.liu        |               |                             |
 +------------+------------------+---------------+-----------------------------+
+| 2019.08.28 |  zhenpeng.xiao   |     2.0.0     |        BM1684 available     |
+|            |  haipeng.wan     |               |                             |
+|            |  hong.liu        |               |                             |
++------------+------------------+---------------+-----------------------------+
 
 Sophon Inference Quickstart
 ---------------------------
