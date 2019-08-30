@@ -176,11 +176,14 @@
 <p>SAIL use “pybind11” to wrap python interfaces, support python3.5.</p>
 <div class="section" id="basic-function">
 <h2>Basic function<a class="headerlink" href="#basic-function" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@brief</span> <span class="n">Get</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">available</span> <span class="n">TPUs</span><span class="o">.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_available_tpu_num</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Get the number of available TPUs.</span>
 
-<span class="nd">@return</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">available</span> <span class="n">TPUs</span><span class="o">.</span>
-
-<span class="nb">int</span> <span class="n">get_available_tpu_num</span><span class="p">();</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tpu_num : int</span>
+<span class="sd">        Number of available TPUs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -351,7 +354,21 @@
 </div></blockquote>
 <p><strong>9). sync_s2d</strong></p>
 <blockquote>
-<div></div></blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sync_s2d</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Copy data from system memory to device memory.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">sync_s2d</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Copy data from system memory to device memory with specified size.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    size : int</span>
+<span class="sd">        Byte size to be copied</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p><strong>10). sync_d2s</strong></p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sync_d2s</span><span class="p">():</span>

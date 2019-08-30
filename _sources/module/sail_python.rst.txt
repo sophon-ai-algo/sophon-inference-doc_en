@@ -8,11 +8,14 @@ _____
 
 .. code-block:: python
 
-        @brief Get the number of available TPUs.
- 
-        @return Number of available TPUs.
- 
-        int get_available_tpu_num();
+        def get_available_tpu_num():
+            """ Get the number of available TPUs.
+
+            Returns
+            -------
+            tpu_num : int
+                Number of available TPUs
+            """
 
 Data type
 _____
@@ -186,6 +189,7 @@ ___________
 **9). sync_s2d**
 
     .. code-block:: python
+
         def sync_s2d():
             """ Copy data from system memory to device memory.
             """
