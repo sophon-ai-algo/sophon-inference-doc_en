@@ -6,13 +6,10 @@ ________
 
 **Introduction**
 
-This sample program implements:
+This sample is under "${sophon-inference}/samples/cpp/run_resnet" folder.
 
-1). Use "get_bmodel" to obtain models and images from BITMAIN's official website;
+This sample program use converted bm model of resnet50 to do inference,
+support both FP32 and INT8 model, and can be deployed on both PCIE and SOC mode.
 
-2). Convert resnet50(caffe model) into bmodel;
-
-3). Use C++ interfaces of SAIL to do inference on TPU.
-
-You can execute the script of "test_resnet50.sh" to finish the pipeline directly.
+For detailed information, see "README.md" under release folder.
 

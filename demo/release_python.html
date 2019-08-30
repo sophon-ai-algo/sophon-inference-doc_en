@@ -97,8 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="release_cpp.html">C++ Samples</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python Samples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#run-yolov3">Run YoloV3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-sophon-algokit">Run Sophon Algokit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#model-split">Model Split</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-faster-rcnn-tf">Run faster rcnn tf</a></li>
 </ul>
 </li>
 </ul>
@@ -170,28 +169,18 @@
 <div class="section" id="run-yolov3">
 <h2>Run YoloV3<a class="headerlink" href="#run-yolov3" title="Permalink to this headline">¶</a></h2>
 <p><strong>Introduction</strong></p>
-<p>This sample program implements:</p>
-<p>1). Use “get_bmodel” to obtain models and images from BITMAIN’s official website;</p>
-<p>2). Convert yolov3(caffe model) to bmodel;</p>
-<p>3). Use python interfaces of SAIL to do inference on TPU.</p>
-<p>You can execute the script of “test_yolov3_caffe.sh” to finish the pipeline directly.</p>
+<p>This sample is under “${sophon-inference}/samples/python/run_yolov3_caffe” folder.</p>
+<p>This sample program use converted yolov3 model(caffe) to do inference,
+support both FP32 and INT8, and can be deployed on both PCIE and SOC mode.</p>
+<p>For more detailed information, see “README.md” under the release folder.</p>
 </div>
-<div class="section" id="run-sophon-algokit">
-<h2>Run Sophon Algokit<a class="headerlink" href="#run-sophon-algokit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-faster-rcnn-tf">
+<h2>Run faster rcnn tf<a class="headerlink" href="#run-faster-rcnn-tf" title="Permalink to this headline">¶</a></h2>
 <p><strong>Introduction</strong></p>
-<p>This sample program implements:</p>
-<p>1). Use “get_bmodel” to obtain models and images from BITMAIN’s official website;</p>
-<p>2). Convert mobilenetv1(caffe model) and mobilenetv1_ssd (caffe model) to bmodels;</p>
-<p>3). Use Algokit to do inference on TPU.</p>
-<p>You can execute the script of “test_sophon_algokit.sh” to finish the pipeline directly.</p>
-</div>
-<div class="section" id="model-split">
-<h2>Model Split<a class="headerlink" href="#model-split" title="Permalink to this headline">¶</a></h2>
-<p><strong>Introduction</strong></p>
-<p>This sample program implements:</p>
-<p>1). Use “AutoSplit” to automatically split deeplabv3_mobilenetv2(tensorflow model) into sub_models and convert some of them to bmodels;</p>
-<p>2). Use “AutoRunner” to do inference on TPU.</p>
-<p>You can execute the script of “test_model_split.sh” to finish the pipeline directly.</p>
+<p>This sample is under “${sophon-inference}/samples/python/run_fasterrcnn_resnet50_tf” folder.</p>
+<p>This sample program use AutoSplit and AutoRunner to deploy fasterrcnn(tensorflow model),
+only support FP32, can be deployed on both PCIE and SOC mode.</p>
+<p>For more detailed information, see “README.md” under the release folder.</p>
 </div>
 </div>
 
