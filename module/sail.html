@@ -173,26 +173,26 @@ And it re-encapsulate with pybind11, providing the most compact Python interface
 The documentation in this module provides an in-depth look at the modules and classes in SAIL that you might use.</p>
 <p>The core classes include:</p>
 <ul class="simple">
-<li>Handle:</li>
+<li><p>Handle:</p></li>
 </ul>
 <p>The wrapper class of bm_handle_t in BMLib.
 Contains device handles, contextual information, used to interact with the kernel driver information of TPU.</p>
 <ul class="simple">
-<li>Tensor:</li>
+<li><p>Tensor:</p></li>
 </ul>
 <p>BMLib wrapper class that encapsulates management of device memroy and synchronization with system memory.</p>
 <ul class="simple">
-<li>Engine：</li>
+<li><p>Engine：</p></li>
 </ul>
 <p>The wrapper class of BMRuntime, which loads bmodel and drives the TPU for reasoning.
 An Instance of Engine can load an arbitrary bmodel.
 The memory corresponding to the input tensor and the output tensor is automatically managed.</p>
 <ul class="simple">
-<li>Bmcv：</li>
+<li><p>Bmcv：</p></li>
 </ul>
 <p>It encapsulates a series of image processing functions that can drive the TPU for image processing.</p>
 <ul class="simple">
-<li>Bmdnn</li>
+<li><p>Bmdnn</p></li>
 </ul>
 <p>BMDNN wrapper class in BMNNSDK, providing a layer/operator level computing interface.</p>
 </div>
