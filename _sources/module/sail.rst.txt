@@ -29,12 +29,11 @@ The wrapper class of BMRuntime, which loads bmodel and drives the TPU for reason
 An Instance of Engine can load an arbitrary bmodel.
 The memory corresponding to the input tensor and the output tensor is automatically managed.
 
+* Decoder:
+
+Decoder to decode videos by VPU and images by JPU.
+
 * Bmcv：
 
 It encapsulates a series of image processing functions that can drive the TPU for image processing.
-
-* Bmdnn
-
-BMDNN wrapper class in BMNNSDK, providing a layer/operator level computing interface.
-
 
