@@ -89,9 +89,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module/sail.html">SAIL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module/sail_cpp.html">SAIL C++ API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module/sail_python.html">SAIL Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module/autosplit.html">AutoSplit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module/autorunner.html">AutoRunner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module/algokit.html">Algokit</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="demo/release_cpp.html">C++ Samples</a></li>
@@ -162,46 +159,51 @@
             
   <div class="section" id="sophon-inference-user-manual">
 <h1>Sophon Inference User Manual<a class="headerlink" href="#sophon-inference-user-manual" title="Permalink to this headline">¶</a></h1>
-<p><strong>Tips</strong></p>
-<p>Before using <strong>“Sophon Inference”</strong>, make sure you have installed the Bitmain Sophon-SC3 TPU and the software development kit BMNNSDK;
-And read the “NNToolChain User Documentation” and “BMCV User Documentation.”</p>
-<p><strong>CopyRight</strong></p>
-<p>CopyRight © 2019 Beijing Bitmain Technology Co., Ltd.
-No part of this document may be reproduced or transmitted in any form or by any means without prior written permission from Bitmain.
-For more information, please visit www.sophon.ai.</p>
-<table border="1" class="docutils">
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/logo.png"><img alt="_images/logo.png" src="_images/logo.png" style="width: 200.0px; height: 200.0px;" /></a>
+</div>
+<div class="line-block">
+<div class="line"><strong>Legal Disclaimer</strong></div>
+<div class="line">Copyright © Bitmain Technologies Co., Ltd. 2019. All rights reserved.</div>
+<div class="line">No part of this document may be reproduced or transmitted in any form or by any means without prior written consent of Bitmain Technologies Co., Ltd.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Notice</strong></div>
+<div class="line">The purchased products, services and features are stipulated by the contract made between Bitmain and the
+customer. All or part of the products, services and features described in this document may not be within the
+purchase scope or the usage scope. Unless otherwise specified in the contract, all statements, information,
+and recommendations in this document are provided “AS IS” without warranties, guarantees or
+representations of any kind, either express or implied. The information in this document is subject to change
+without notice. Every effort has been made in the preparation of this document to ensure accuracy of the
+contents, but all statements, information, and recommendations in this document do not constitute a
+warranty of any kind, express or implied.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Technical Support</strong></div>
+<div class="line">Bitmain Technologies Co., Ltd.</div>
+<div class="line">Address：Building 25, North Olympic Science &amp; Technology Park, Baosheng South Road, Haidian District, Beijing, 100029, China</div>
+<div class="line">Website: www.sophon.ai</div>
+<div class="line">Email：<a class="reference external" href="mailto:support&#46;ai&#37;&#52;&#48;bitmain&#46;com">support<span>&#46;</span>ai<span>&#64;</span>bitmain<span>&#46;</span>com</a></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Change History</strong></div>
+</div>
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="16%" />
-<col width="24%" />
 <col width="20%" />
-<col width="39%" />
+<col width="25%" />
+<col width="55%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">___Date___</th>
-<th class="head">_____Editor_____</th>
-<th class="head">___Version___</th>
-<th class="head">__________Remarks__________</th>
+<tr class="row-odd"><th class="head">Version</th>
+<th class="head">Date</th>
+<th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>2019.06.12</td>
-<td>zhenpeng.xiao</td>
-<td>1.1.3</td>
-<td>First Version</td>
-</tr>
-<tr class="row-odd"><td>2019.07.23</td>
-<td>zhenpeng.xiao
-haipeng.wan
-hong.liu</td>
-<td>1.1.3.2</td>
-<td>For all in one</td>
-</tr>
-<tr class="row-even"><td>2019.08.28</td>
-<td>zhenpeng.xiao
-haipeng.wan
-hong.liu</td>
-<td>2.0.0</td>
-<td>BM1684 available</td>
+<tr class="row-even"><td>V2.0.1</td>
+<td>2019.11.15</td>
+<td>First official release</td>
 </tr>
 </tbody>
 </table>
@@ -210,8 +212,8 @@ hong.liu</td>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="quickstart/abstract.html">Introduction of  Sophon Inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quickstart/abstract.html#bmnnsdk">BMNNSDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart/abstract.html#model-deployment">Model deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart/abstract.html#bmnnsdk">BMNNSDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart/abstract.html#sophon-inference">Sophon Inference</a></li>
 </ul>
 </li>
@@ -240,7 +242,7 @@ hong.liu</td>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#tensor">Tensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#iomode">IOMode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#engine">Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#bmdnn">Bmdnn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#decoder">Decoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_cpp.html#bmcv">Bmcv</a></li>
 </ul>
 </li>
@@ -251,24 +253,8 @@ hong.liu</td>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-iomode">sail.IOMode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-tensor">sail.Tensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-engine">sail.Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-bmdnn">sail.Bmdnn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-decoder">sail.Decoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="module/sail_python.html#sail-bmcv">sail.Bmcv</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module/autosplit.html">AutoSplit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module/autosplit.html#graph-infos-json">graph_infos.json</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/autosplit.html#split">split</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/autosplit.html#convert">convert</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module/autorunner.html">AutoRunner</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module/autorunner.html#load">load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/autorunner.html#infer">infer</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="module/algokit.html">Algokit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="module/algokit.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="module/algokit.html#add-an-application-e-g-mobilenetssd">Add an application(e.g. mobilenetssd)</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +270,6 @@ hong.liu</td>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="demo/release_python.html">Python Samples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="demo/release_python.html#run-yolov3">Run YoloV3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/release_python.html#run-faster-rcnn-tf">Run faster rcnn tf</a></li>
 </ul>
 </li>
 </ul>

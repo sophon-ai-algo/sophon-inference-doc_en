@@ -6,30 +6,41 @@
 Sophon Inference User Manual
 ============================
 
-**Tips**
+.. figure:: ../source_common/_static/logo.png
+   :width: 400px
+   :height: 400px
+   :scale: 50%
+   :align: center
 
-Before using **"Sophon Inference"**, make sure you have installed the Bitmain Sophon-SC3 TPU and the software development kit BMNNSDK;
-And read the "NNToolChain User Documentation" and "BMCV User Documentation."
+| **Legal Disclaimer**
+| Copyright © Bitmain Technologies Co., Ltd. 2019. All rights reserved.
+| No part of this document may be reproduced or transmitted in any form or by any means without prior written consent of Bitmain Technologies Co., Ltd.
 
-**CopyRight**
+| **Notice**
+| The purchased products, services and features are stipulated by the contract made between Bitmain and the
+  customer. All or part of the products, services and features described in this document may not be within the
+  purchase scope or the usage scope. Unless otherwise specified in the contract, all statements, information,
+  and recommendations in this document are provided "AS IS" without warranties, guarantees or
+  representations of any kind, either express or implied. The information in this document is subject to change
+  without notice. Every effort has been made in the preparation of this document to ensure accuracy of the
+  contents, but all statements, information, and recommendations in this document do not constitute a
+  warranty of any kind, express or implied.
 
-CopyRight © 2019 Beijing Bitmain Technology Co., Ltd.
-No part of this document may be reproduced or transmitted in any form or by any means without prior written permission from Bitmain.
-For more information, please visit www.sophon.ai.
+| **Technical Support**
+| Bitmain Technologies Co., Ltd.
+| Address：Building 25, North Olympic Science & Technology Park, Baosheng South Road, Haidian District, Beijing, 100029, China
+| Website: www.sophon.ai
+| Email：support.ai@bitmain.com
 
-+------------+------------------+---------------+-----------------------------+
-| ___Date___ | _____Editor_____ | ___Version___ | __________Remarks__________ |
-+============+==================+===============+=============================+
-| 2019.06.12 |  zhenpeng.xiao   |     1.1.3     |        First Version        |
-+------------+------------------+---------------+-----------------------------+
-| 2019.07.23 |  zhenpeng.xiao   |     1.1.3.2   |        For all in one       |
-|            |  haipeng.wan     |               |                             |
-|            |  hong.liu        |               |                             |
-+------------+------------------+---------------+-----------------------------+
-| 2019.08.28 |  zhenpeng.xiao   |     2.0.0     |        BM1684 available     |
-|            |  haipeng.wan     |               |                             |
-|            |  hong.liu        |               |                             |
-+------------+------------------+---------------+-----------------------------+
+| **Change History**
+.. table::
+    :widths: 20 25 55
+
+    ========== ============ ========================
+     Version    Date         Description
+    ========== ============ ========================
+     V2.0.1     2019.11.15   First official release
+    ========== ============ ========================
 
 Sophon Inference Quickstart
 ---------------------------
@@ -49,19 +60,12 @@ Sophon Inference Modules
    module/sail
    module/sail_cpp
    module/sail_python
-   module/autosplit
-   module/autorunner
-   module/algokit
 
 Sophon Inference Samples
 ------------------------
 .. toctree::
    :glob:
-   
+
    demo/release_cpp
    demo/release_python
-   demo/preparation-
-   demo/cpp-
-   demo/cpp_sail-
-   demo/python-
 

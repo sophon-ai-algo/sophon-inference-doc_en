@@ -13,4 +13,16 @@ support both FP32 and INT8, and can be deployed on both PCIE and SOC mode.
 
 For more detailed information, see "README.md" under the release folder.
 
+Run faster rcnn tf
+__________________
+
+**Introduction**
+
+This sample is under "${sophon-inference}/samples/python/run_fasterrcnn_resnet50_tf" folder.
+
+This sample program use AutoSplit and AutoRunner to deploy fasterrcnn(tensorflow model),
+only support FP32, can be deployed on both PCIE and SOC mode.
+
+For more detailed information, see "README.md" under the release folder.
+
 

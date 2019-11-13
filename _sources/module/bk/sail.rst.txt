@@ -1,9 +1,10 @@
 SAIL
 ====
 
-SAIL is the core module in the Sophon Inference.
+SAIL is the support module in the Sophon Inference.
+Most of the code in AutoDeploy, Algokit, and Samples is built on top of SAIL.
 
-SAIL encapsulates BMRuntime, BMDecoder, BMCV, and BMLib in BMNNSDK.
+SAIL encapsulates BMRuntime, BMDNN, BMCV, and BMLib in BMNNSDK.
 It abstracts the original functions in BMNNSDK such as "loading bmodel and driving TPU reasoning",
 "Drive TPU for image processing", "Drive VPU for image and video decoding" into simpler C++ interfaces for external use.
 And it re-encapsulate with pybind11, providing the most compact Python interfaces.

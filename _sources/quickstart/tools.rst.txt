@@ -22,38 +22,5 @@ usage:
        get_bmodel -[h] [--save_path SAVE_PATH] arg
 
 
-**2).split_tf_model**
-
-FP32 only.
-
-Using AutoSplit to split model, let you split model simply.
-
-usage:
-
-    .. code-block:: shell
-
-       split_tf_model  -p your tpu version, BM1682 or BM1684.
-                       -t target directory to save splitted models.
-                       -m model path
-                       -w weight path
-                       -d if dynamic, 0 for static or 1 for dynamic
-                       -n input tensor names, splitted by comma, x,x
-                       -s input tensor shapes, splitted by comma, (x,x,x,x),(x,x)
-                       -o output tensor names, splitted by comma, x,x
-
-
-**3).test_splitted_tf_model**
-
-FP32 only.
-
-Check if the results produces by splitted models are equal to original results.
-
-usage:
-
-    .. code-block:: shell
-
-       test_splitted_tf_model -m input tfmodel path
-                              -s input submodel path
-                              -c 0 or 1, if you are using cmodel on x86
 
 

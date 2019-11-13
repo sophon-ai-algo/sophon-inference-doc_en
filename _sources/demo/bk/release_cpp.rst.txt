@@ -1,0 +1,15 @@
+C++ Samples
+===========
+
+resnet50
+________
+
+**Introduction**
+
+This sample is under "${sophon-inference}/samples/cpp/run_resnet" folder.
+
+This sample program use converted bm model of resnet50 to do inference,
+support both FP32 and INT8 model, and can be deployed on both PCIE and SOC mode.
+
+For detailed information, see "README.md" under release folder.
+

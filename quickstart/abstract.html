@@ -82,8 +82,8 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction of  Sophon Inference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#bmnnsdk">BMNNSDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#model-deployment">Model deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bmnnsdk">BMNNSDK</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sophon-inference">Sophon Inference</a></li>
 </ul>
 </li>
@@ -95,9 +95,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../module/sail.html">SAIL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/sail_cpp.html">SAIL C++ API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/sail_python.html">SAIL Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module/autosplit.html">AutoSplit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module/autorunner.html">AutoRunner</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module/algokit.html">Algokit</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../demo/release_cpp.html">C++ Samples</a></li>
@@ -171,69 +168,62 @@
 <p>Sophon Inference is an open source tool developed based on Bitmain’s original deep learning development kit “BMNNSDK”.
 It is designed to help you quickly deploy your model on the Sophon TPUs.(<a class="reference external" href="https://sophon.ai">https://sophon.ai</a>)</p>
 <img alt="../_images/sophon_inference.png" src="../_images/sophon_inference.png" />
-<p>The figure above shows the overall structure of Sophon Inference and its dependencies on BMNNSDK.
-Below we explain the concepts mentioned in the above graphic.</p>
-<div class="section" id="bmnnsdk">
-<h2>BMNNSDK<a class="headerlink" href="#bmnnsdk" title="Permalink to this headline">¶</a></h2>
-<p>BMNNSDK is the original deep learning development toolkit of Bitmain.
-It is mainly composed of modules such as BMDriver, BMCompiler, BMRuntime, BMDNN, BMCV and BMLib.</p>
-<p><strong>BMDriver</strong>
-:It is the driver for the Sophon TPU and is installed into your operating system kernel in an “insmod” manner.</p>
-<p><strong>BMCompiler</strong>
-:It is a set of model compilation tools that compile your trained deep learning models into instructions that can be loaded and executed by the Sophon TPU.
-These instructions will be stored into to a file with the suffix “bmodel”.</p>
-<p><strong>BMRuntime</strong>
-:It provides interfaces to load the “bmodel” file onto the Sophon TPU and drive the TPU chip to implement reasoning.</p>
-<p><strong>BMDNN</strong>
-:It provides layer/operator computation through TPU.</p>
-<p><strong>BMCV</strong>
-:It can drive the TPU for image processing.</p>
-<p><strong>BMLib</strong>
-:Provides basic interfaces, which can control TPU memory.</p>
-<p>If you have any other questions about BMNNSDK, please refer to the “NNToolChain User Manual” and the “BMCV User Manual”.</p>
-</div>
+<p>The figure above shows the process of deploying a deep learning model to a TPU using Sophon Inference.
+Below we will explain Some basic concepts are in conjunction with the above diagram.</p>
 <div class="section" id="model-deployment">
 <h2>Model deployment<a class="headerlink" href="#model-deployment" title="Permalink to this headline">¶</a></h2>
 <p>Model deployment includes two steps: model offline compilation and online reasoning.</p>
 <p><strong>a).Offline Compilation</strong></p>
-<p>Use the BMCompiler to compile the deep learning model into TPU instructions and save them into the bmodel file.</p>
-<p>BMCompiler is a set of model compilation tools that correspond to different deep learning frameworks.
-The current BMNNSDK implements four compilation tools to support four deep learning frameworks.
-They are bmnetc(for Caffe), bmnett(for Tensorflow), bmnetp(for Pytorch), bmnetm(for Mxnet)。</p>
-<p>Model compilation does not require sophon TPU,
-and does not depend on modules other than BMCompiler in BMNNSDK.</p>
-<p>We now support INT8 inference on Sophon-SC5.
-If you want to try, calibration will be done before “Offline Compilation”.</p>
+<p>This process corresponds to the blue part in the above figure.
+Suppose the user has obtained a trained FP32 precision deep learning model,
+then the user can directly compile the model to bmodel using BMCompiler.
+The bmodel generated in this way can be reasoned using the FP32 computing units on the TPU.
+The BMCompiler is a general term here. It contains four front-end tools that support four deep learning frameworks.
+They are bmnetc(caffe), bmnett(tensorflow), bmnetm(mxnet), bmnetp(pytorch).</p>
+<p>If the user wants to use the INT8 computing units on the TPU for reasoning,
+Quantization &amp; Calibration tool can be used to quantify the original FP32 precision model to an INT8 precision model.
+Finally, user can Compile the generated int8_umodel to bmodel using the bmnetu tool in BMCompiler.</p>
+<p>The generation of bmodel does not depend on TPU.
+Users only need to install the corresponding BBMCompiler and Quantization &amp; Calibration tools as needed to complete this step.
+In theory, a deep learning model, as long as the bmodel can be finally generated, the bmodel can be deployed on Sophon TPUs.</p>
 <p><strong>b).Online Reasoning</strong></p>
-<p>Load the “bmodel” file into the TPU using the interfaces provided in BMRuntime,
-and drive the TPU to execute the instructions in the bmodel to complete the reasoning.</p>
-<p>To implement the online reasoning process, you need to install at least Sophon TPU, BMDriver, BMruntime.</p>
+<p>This process corresponds to the process from input to output in the red part of the above figure.
+Users can do images/video decoding, tensor processing and calculations, and bmodel operations based on the SAIL module in Sophon Inference.</p>
+<p>This process needs to be performed in the environment where the TPU and driver are installed.</p>
+</div>
+<div class="section" id="bmnnsdk">
+<h2>BMNNSDK<a class="headerlink" href="#bmnnsdk" title="Permalink to this headline">¶</a></h2>
+<p>BMNNSDK is the original deep learning development toolkit of Bitmain.
+It is mainly composed of modules such as Quantization &amp; Calibration Tool, BMCompiler, BMDriver, BMLib, BMDecoder, BMCV, BMRuntime.</p>
+<p><strong>Quantization &amp; Calibration Tool</strong>
+:It can quantize the model of FP32 precision generated by your training to INT8 precision model,
+which is equal to the process of converting fp32_umodel to int8_umodel in the above figure.</p>
+<p><strong>BMCompiler</strong>
+:It is a set of model compilation tools that compile your trained deep learning model into a collection of instructions that can be loaded and executed by the Sophon TPU,
+and save these instructions in a file with the suffix “bmodel”.
+The tool supports compiling the FP32 model directly into bmodel.
+It also supports compiling the INT8 model generated by Quantization &amp; Calibration Tool to bmodel.</p>
+<p><strong>BMDriver</strong>
+:It is the driver for the Sophon TPU and is installed into your operating system kernel in an “insmod” manner.</p>
+<p><strong>BMLib</strong>
+:Provides basic interfaces, which can control TPU memory.</p>
+<p><strong>BMDecoder</strong>
+:Provides interfaces which used to decode/encode image/video.</p>
+<p><strong>BMCV</strong>
+:It can drive TPU for image processing and tensor calculations.</p>
+<p><strong>BMRuntime</strong>
+:It provides interfaces to load the “bmodel” file onto the Sophon TPU and drive the TPU chip to implement reasoning.</p>
+<p>If you have any other questions about BMNNSDK, please refer to the “NNToolChain User Manual” and the “BMCV User Manual”.</p>
 </div>
 <div class="section" id="sophon-inference">
 <h2>Sophon Inference<a class="headerlink" href="#sophon-inference" title="Permalink to this headline">¶</a></h2>
-<p>Sophon Inference includes AutoSplit, Algokit, AutoRunner, SAIL.
-We provide python/c++ interfaces and sample programs, you can choose the appropriate calling method according to your needs.</p>
-<p>For users using Python, Sophon Inference provides three modules: SAIL, AutoDeploy, and Algokit.</p>
+<p>Sophon Inference currently mainly includes the SAIL module in the above figure.
+We provide python/c++ interfaces and sample programs, and users can choose the appropriate calling method according to their needs.</p>
 <p><strong>SAIL</strong>
-:BMRuntime, BMCV, BMDNN and BMLib in BMNNSDK are encapsulated. C++/python interfaces are provided. And can be used to
+:BMRuntime, BMCV, BMDecoder and BMLib in BMNNSDK are encapsulated. C++/python interfaces are provided. And can be used to
 a).Drive the TPU to reason the compiled deep learning model (bmodel);
 b).Use Sophon TPU for image and video processing.
 For detailed introduction of model conversion and image/video processing, please refer to “NNToolChain User Documentation” and “BMCV User Documentation”.</p>
-<p><strong>AutoSplit</strong>
-:One-click model splitting and compilation tool for models that cannot be fully deployed to the Sophon TPU, Python interfaces are provided, can automatically
-a).Divide the original model into several sub-models;
-b).Compile the submodels that can be deployed on the Sophon TPU;
-Current support models trained by tensorflow and mxnet.</p>
-<p><strong>AutoRunner</strong>
-:Usually used with AutoSplit, it can also be used alone. C++/Python interfaces are provided.
-The provided interface can implement the reasoning of the sub-model sequence after splitting or compilation.
-The inference interface of the specific deep learning framework and SAIL are called in AutoRunner to implement the reasoning on the CPU and TPU respectively.
-Currently supports tensorflow/mxnet.</p>
-<p><strong>Algokit</strong>
-:A python algorithm framework , which encapsulated the functions of SAIL and AutoRunner, for application deployment. includes:
-a). Template codes for user reference;
-b). Usages for users to add algorithm applications.
-Currently, application examples in the field of computer vision such as image classification, detection, and segmentation are provided.</p>
 </div>
 </div>
 

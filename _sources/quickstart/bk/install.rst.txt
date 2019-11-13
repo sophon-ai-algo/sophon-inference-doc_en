@@ -16,7 +16,7 @@ The compiled bmodel can be loaded and run in SOC mode.
 Currently SophonInference supports PCIE mode, and the SOC mode.
 For SOC mode, Sophon Inference has already pre-installed on Sophon SE3.
 Including SAIL(cpp) and SAIL/AutoRunner/Algokit(python3).
-For PCIE mode, Sophon Inference has also provided SAIL(cpp) and SAIL(python3).
+For PCIE mode, Sophon Inference has also provided SAIL(cpp) and SAIL/AutoSplit/AutoRunner/Algokit(python3).
 
 
 PCIE mode
