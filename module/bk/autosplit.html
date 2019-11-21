@@ -82,7 +82,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/abstract.html">Introduction of  Sophon Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/install.html">Sophon Inference Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/reminds.html">Reminds</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart/tools.html">Useful Tools</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../sail.html">SAIL</a></li>
@@ -168,12 +167,12 @@ Generated sub-models could be used by the AutoRunner.
 The AutoSplit source codes are located in the “module/auto_split/” directory and currently supports tensorflow/mxnet.
 We provide two functions in “auto_deploy.api”, which are:</p>
 <ul class="simple">
-<li><p>split：</p></li>
+<li>split：</li>
 </ul>
 <p>Automatically split the model that needs to be deployed into several submodels.
 And Save the submodels to the specified directory and save the relevant parameters to the “graph_infos.json” file in the directory.</p>
 <ul class="simple">
-<li><p>convert：</p></li>
+<li>convert：</li>
 </ul>
 <p>Parse the “graph_infos.json” file in the specified directory,
 and compile all the models in the directory that can be deployed on the TPU into bmodel.</p>
@@ -192,33 +191,33 @@ The output is consistent with the original unsplitted model.</p>
 <p>The graph_infos.json file contains information about the submodels,
 which are:</p>
 <ul class="simple">
-<li><p>graphs：</p></li>
+<li>graphs：</li>
 </ul>
 <p>A list in which each element contains information of a submodel of “inputs”, “outputs”, “running device (cpu or tpu)”, “model path information (model_info)”.
 If the running device is tpu, it will also contain the path where the bmodel is located (context_dir).</p>
 <ul class="simple">
-<li><p>tensors：</p></li>
+<li>tensors：</li>
 </ul>
 <p>Contains information on the input and output tensors of all submodels.
 These tensors are divided into three categories: “input”, “output”, and “intermediate”,
 Where “input” and “output” indicate that the tensor is the input and output of the original model,
 and “intermediate” indicates that the tensor is the intermediate tensor produced after splitting.</p>
 <ul class="simple">
-<li><p>graph_num：</p></li>
+<li>graph_num：</li>
 </ul>
 <p>Number of submodels after splitting.</p>
 <ul class="simple">
-<li><p>platform：</p></li>
+<li>platform：</li>
 </ul>
 <p>The deep learning framework on which the original model is based,
 currently supports tensorflow and mxnet.</p>
 <ul class="simple">
-<li><p>dynamic：</p></li>
+<li>dynamic：</li>
 </ul>
 <p>Dynamic mode represents the shape of input tensor of the model is variable.
 if it is dynamic, then the size information in tensors is the largest size.</p>
 <ul class="simple">
-<li><p>layout：</p></li>
+<li>layout：</li>
 </ul>
 <p>The layout of the original model, NHWC or NCHW.</p>
 <p>The following shows the contents of “graph_infos.json” in the figure above:</p>

@@ -82,7 +82,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/abstract.html">Introduction of  Sophon Inference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/install.html">Sophon Inference Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/reminds.html">Reminds</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart/tools.html">Useful Tools</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../sail.html">SAIL</a></li>
@@ -164,12 +163,12 @@ without worrying about how to write the program to drive bmodel.
 The AutoRunner source codes are located in the “module/auto_runner/” directory and currently supports tensorflow/mxnet.
 We provide two functions in “auto_runner.api”, which are:</p>
 <ul class="simple">
-<li><p>load:</p></li>
+<li>load:</li>
 </ul>
 <p>Parse the “graph_infos.json” file in the specified directory,
 and load the submodels sequentially, return a Runner instance.</p>
 <ul class="simple">
-<li><p>infer：</p></li>
+<li>infer：</li>
 </ul>
 <p>Use given Runner instance and input tensors to do inference sequentially.</p>
 <p>Usually AutoRunner needs to be used with AutoSplit,

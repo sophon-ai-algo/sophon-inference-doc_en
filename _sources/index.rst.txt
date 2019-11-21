@@ -50,7 +50,7 @@ Sophon Inference Quickstart
    quickstart/abstract
    quickstart/install
    quickstart/reminds
-   quickstart/tools
+   quickstart/tools-
 
 Sophon Inference Modules
 ------------------------
