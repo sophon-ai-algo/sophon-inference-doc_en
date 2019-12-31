@@ -1,14 +1,11 @@
-使用SSD对图像和视频进行目标检测
-===============================
+Detection with SSD
+==================
 
-在本节，我们将展示如何在 Sophon TPU 上面使用 ssd300-vgg16 进行目标检测。
-我们使用的 bmodel 都是经过转换后的官方的 caffe 版本的 ssd300-vgg16，包括了 fp32 以及 int8 类型的。
-我们实现了 5 个示例程序。
-其中，case 0，case 1，case 3，case 4 的区别在于解码方式与数据预处理的方式不同。
-case 2 是 case 1 的多 btach 版本，可以体现 int8 模型在 batch 为 4 的倍数时较优异的性能。
+In this Demo, we use ssd300-vgg16 to detect objects in both images and videos. 
+The bmodels used in this demo are already converted from official ssd300-vgg16, to both fp32 and int8 data type.
 
-在本节的示例程序中，我们将重点介绍图像/视频的解码和预处理。
-关于模型推理部分，即 sail::Engine 的使用，请参考 “2.2 使用 Resnet-50 进行图像分类” 中的相关说明。
+The main differences among these cases are decoder and preprocessor we choosen, except case 2, 
+which is just the 4-N mode (batch_size is the multiples of 4) of case 1.
 
 +----+-------------+-----------+--------------+-----------+--------------+--------+--------------+------------+-------------+
 | ID | Input       | Decoder   | Preprocessor | Data Type | Model        | Mode   | Model Number | Batch Size | Multi-Thread|

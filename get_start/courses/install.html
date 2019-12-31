@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>依赖软件安装 &mdash; SophonInference  documentation</title>
+  <title>install required softwares &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="使用 bmnett 将 mobilenet 编译为 bmodel" href="convert.html" />
-    <link rel="prev" title="小试牛刀：模型部署" href="../2_crash_course.html" /> 
+    <link rel="next" title="convert tensorflow frozen model to bmodel using bmnett" href="convert.html" />
+    <link rel="prev" title="Crash Course" href="../2_crash_course.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,19 +81,19 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">快速入门</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../0_hardware.html">算丰硬件产品概览</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1_software.html">算丰软件产品概览</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">小试牛刀：模型部署</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">依赖软件安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="convert.html">使用 bmnett 将 mobilenet 编译为 bmodel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deploy.html">使用SAIL驱动TPU加载bmodel并进行推理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_products.html">Sophon TPU Choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_introduction.html">Sophon Software Stack</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">Crash Course</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">install required softwares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert.html">convert tensorflow frozen model to bmodel using bmnett</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deploy.html">deploy bmodel on Sophon SC5 using sail</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">示例程序</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">Practical Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API Reference</a></li>
 </ul>
 
             
@@ -139,11 +139,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../0_get_start.html">快速入门</a> &raquo;</li>
+          <li><a href="../../0_get_start.html">Getting Started</a> &raquo;</li>
         
-          <li><a href="../2_crash_course.html">小试牛刀：模型部署</a> &raquo;</li>
+          <li><a href="../2_crash_course.html">Crash Course</a> &raquo;</li>
         
-      <li>依赖软件安装</li>
+      <li>install required softwares</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,53 +162,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>依赖软件安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><strong>硬件环境确认</strong></p>
+  <div class="section" id="install-required-softwares">
+<h1>install required softwares<a class="headerlink" href="#install-required-softwares" title="Permalink to this headline">¶</a></h1>
+<p>BMNNSDK is the original deep learning development toolkit of Bitmain.
+You can contact us to get it.
+It is a tarfile named as bmnnsdk2-bm1684_vx.x.x.tar.gz.
+The bmnnsdk2 means that it is the second version of bmnnsdk.
+The bm1684 means that it is suitable for the chip of bm1684.
+After you uncompress this tarfile,
+all modules of bmnnsdk will placed in the folder of bmnnsdk2-bm1684_vx.x.x,
+which we are going to use ${BMNNSDK} to represent.</p>
+<p><strong>Installing libs</strong> should only be done one time after you uncompress this tarfile.
+The purpose of this installation is that we will choose the correct version of libs depends on your kernel version.</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 确认系统版本</span>
-  bitmain@bitmain:~$ lsb_release -a
-  <span class="c1"># No LSB modules are available.</span>
-  <span class="c1"># Distributor ID: Ubuntu</span>
-  <span class="c1"># Description:    Ubuntu 16.04.6 LTS</span>
-  <span class="c1"># Release:        16.04</span>
-  <span class="c1"># Codename:       xenial</span>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/ <span class="o">&amp;&amp;</span> ./install_lib.sh nntc
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Installing driver</strong> also should only be done one time.
+After installing the driver, you can see “bmdev-ctl” and “bm-sophon0” under your “/dev/” path.</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/ <span class="o">&amp;&amp;</span> sudo ./install_driver_pcie.sh
 
-<span class="c1"># 确认内核版本</span>
-  bitmain@bitmain:~$ uname -r
-  <span class="c1"># 4.15.0-45-generic</span>
-
-<span class="c1"># 确认 Sophon SC5 已正确插入 PCIE 插槽</span>
-  bitmain@bitmain:~$ lspci <span class="p">|</span> grep <span class="m">1684</span>
-  <span class="c1"># 01:00.0 Processing accelerators: Device 1e30:1684 (rev 01)</span>
+<span class="c1"># check if installing successfully</span>
+ls /dev/ <span class="p">|</span> grep <span class="s2">&quot;bm&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>解压并安装链接库</strong></p>
+<p><strong>Installing bmnett and Configuring environment</strong> should be done as long as you open a new terminal.
+Bmnett is a python module and python3.5 is recommanded.</p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/
-./install_lib.sh nntc
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/ <span class="o">&amp;&amp;</span> <span class="nb">source</span> envsetup_pcie.sh bmnett
 </pre></div>
 </div>
 </div></blockquote>
-<p><strong>安装驱动</strong></p>
+<p>Sophon-Inference is a submodule of BMNNSDK which supplies a bunch of hight level APIs.
+With Sophon-Inference, we can rapidly deploy our deep learning models on Sophon TPU products.
+<strong>Install Sophon-Inference:</strong></p>
 <blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/
-sudo ./install_driver_pcie.sh
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>安装bmnett</strong></p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/scripts/
-<span class="nb">source</span> envsetup_pcie.sh bmnett
-</pre></div>
-</div>
-</div></blockquote>
-<p><strong>安装Sophon Inference</strong></p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/examples/sail/python3/x86/
-pip3 install sophon-x.x.x-py3-none-any.whl --user
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">BMNNSDK</span><span class="si">}</span>/exsamples/sail/python3/x86/ <span class="o">&amp;&amp;</span> pip3 install sophon-2.0.2-py3-none-any.whl --user
 </pre></div>
 </div>
 </div></blockquote>
@@ -222,10 +214,10 @@ pip3 install sophon-x.x.x-py3-none-any.whl --user
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="convert.html" class="btn btn-neutral float-right" title="使用 bmnett 将 mobilenet 编译为 bmodel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="convert.html" class="btn btn-neutral float-right" title="convert tensorflow frozen model to bmodel using bmnett" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../2_crash_course.html" class="btn btn-neutral float-left" title="小试牛刀：模型部署" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../2_crash_course.html" class="btn btn-neutral float-left" title="Crash Course" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python代码解析 &mdash; SophonInference  documentation</title>
+  <title>Python Codes Explanation &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="使用Yolov3对多路视频做目标检测" href="../3_yolov3.html" />
-    <link rel="prev" title="C++代码解析" href="cpp.html" /> 
+    <link rel="next" title="Detection with Yolov3" href="../3_yolov3.html" />
+    <link rel="prev" title="C++ Codes Explanation" href="cpp.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,28 +81,28 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../0_get_start.html">快速入门</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../1_demo.html">示例程序</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../0_preface.html">前言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1_resnet50.html">使用 Resnet-50 进行图像分类</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../2_ssd.html">使用SSD对图像和视频进行目标检测</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="usage.html">运行demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cpp.html">C++代码解析</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Python代码解析</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#case-0-opencv">Case 0: 使用 opencv 解码和数据预处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#case-1-bm-ffmpeg-bmcv">Case 1: 使用 bm-ffmpeg 解码、使用 bmcv 做预处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#case-2-case-1-4n">Case 2: case 1 的 4N 模式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#case-3-bm-opencv">Case 3: 使用 bm-opencv 做解码和数据预处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#case-4-bm-opencv-bmcv">Case 4: 使用 bm-opencv 做解码，使用 bmcv 做预处理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../0_get_start.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../1_demo.html">Practical Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_preface.html">Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_resnet50.html">Classification with Resnet</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../2_ssd.html">Detection with SSD</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp.html">C++ Codes Explanation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Python Codes Explanation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#case-0-decoding-and-preprocessing-with-opencv">Case 0: decoding and preprocessing with opencv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-1-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv">Case 1: decoding with bm-ffmpeg and preprocessing with bmcv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-2-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv-4n-mode">Case 2: decoding with bm-ffmpeg and preprocessing with bmcv, 4N-mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-3-decoding-and-preprocessing-with-bm-opencv">Case 3: decoding and preprocessing with bm-opencv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-4-decoding-with-bm-opencv-and-preprocessing-with-bmcv">Case 4: decoding with bm-opencv and preprocessing with bmcv</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../3_yolov3.html">使用Yolov3对多路视频做目标检测</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../4_mtcnn.html">使用MTCNN进行人脸检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_yolov3.html">Detection with Yolov3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_mtcnn.html">Detection with MTCNN</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API Reference</a></li>
 </ul>
 
             
@@ -148,11 +148,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../1_demo.html">示例程序</a> &raquo;</li>
+          <li><a href="../../1_demo.html">Practical Demos</a> &raquo;</li>
         
-          <li><a href="../2_ssd.html">使用SSD对图像和视频进行目标检测</a> &raquo;</li>
+          <li><a href="../2_ssd.html">Detection with SSD</a> &raquo;</li>
         
-      <li>Python代码解析</li>
+      <li>Python Codes Explanation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,12 +171,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="python">
-<h1>Python代码解析<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="case-0-opencv">
-<h2>Case 0: 使用 opencv 解码和数据预处理<a class="headerlink" href="#case-0-opencv" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="python-codes-explanation">
+<h1>Python Codes Explanation<a class="headerlink" href="#python-codes-explanation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="case-0-decoding-and-preprocessing-with-opencv">
+<h2>Case 0: decoding and preprocessing with opencv<a class="headerlink" href="#case-0-decoding-and-preprocessing-with-opencv" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>在该示例中，我们封装了一个函数，完成目标检测的任务，如下：</p>
+<div><p>In case 0, we exploit a bmodel converted from ssd300-vgg16 to detect objects from videos or images.
+We encapsulated an “inference” function to complete it.
+The definition of the function is:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inference</span><span class="p">(</span><span class="n">bmodel_path</span><span class="p">,</span> <span class="n">input_path</span><span class="p">,</span> <span class="n">loops</span><span class="p">,</span> <span class="n">tpu_id</span><span class="p">,</span> <span class="n">compare_path</span><span class="p">):</span>
   <span class="sd">&quot;&quot;&quot; Load a bmodel and do inference.</span>
@@ -193,8 +195,30 @@
 </pre></div>
 </div>
 </div></blockquote>
-<p>在该函数中，我们通过循环处理视频的连续帧来模拟真实的目标检测业务。
-在本示例程序中，我们使用 opencv 进行视频解码和预处理。</p>
+<p>In this function, we first initialize a sail::Engine instance with specified device,
+and load a bmodel into this sail::Engine instance.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># init Engine and load bmodel</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">sail</span><span class="o">.</span><span class="n">Engine</span><span class="p">(</span><span class="n">bmodel_path</span><span class="p">,</span> <span class="n">tpu_id</span><span class="p">,</span> <span class="n">sail</span><span class="o">.</span><span class="n">IOMode</span><span class="o">.</span><span class="n">SYSIO</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>We also need to initialize instances from PreProcessor, PostProcessor and Decoder.</p>
+<p>In this case, the decoder we used is the VideoCapture of opencv, we use it to decode videos or images.</p>
+<p>The PreProcessor and PostProcessor are classes just defined in this script.
+Preprocessing contains some resizing or scaling to original input tensor,
+while postprocessing contains bbox transformation and non-max suppression.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PreProcessor</span><span class="p">:</span>
+  <span class="sd">&quot;&quot;&quot; Preprocessing class.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">PostProcessor</span><span class="p">:</span>
+  <span class="s2">&quot;&quot;&quot; Postprocessing class.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>In the for-loop, there is a pipeline of the inference of detection:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pipeline of inference</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loops</span><span class="p">):</span>
@@ -217,11 +241,15 @@
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="case-1-bm-ffmpeg-bmcv">
-<h2>Case 1: 使用 bm-ffmpeg 解码、使用 bmcv 做预处理<a class="headerlink" href="#case-1-bm-ffmpeg-bmcv" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-1-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv">
+<h2>Case 1: decoding with bm-ffmpeg and preprocessing with bmcv<a class="headerlink" href="#case-1-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>在该示例程序中，我们使用 bm-ffmpeg 做解码，bmcv 库做预处理。
-我们已经在 SAIL 封装了 bm-ffmpeg 与 bmcv 的 API，因此用户无需关注其底层实现。</p>
+<div><p>In case 1, we use bm-ffmpeg and bmcv for decoding and preprocessing.
+But you don’t need to concern about the implementation of bm-ffmpeg and bmcv.
+We have already encapsulated them into SAIL.</p>
+<p>For decoding, sail::Decoder is based on bm-ffmpeg to help you decode videos and images.
+Just treat sail::Decoder as cv::VideoCapture, while sail::BMImage as cv::Mat,
+you can easily understand the code below:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># init decoder</span>
 <span class="n">decoder</span> <span class="o">=</span> <span class="n">sail</span><span class="o">.</span><span class="n">Decoder</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">tpu_id</span><span class="p">)</span>
@@ -233,10 +261,12 @@
 </pre></div>
 </div>
 </div></blockquote>
+<p>And sail::Bmcv is used for preprocessing.
+Other codes are almost the same with case 0.</p>
 </div></blockquote>
 </div>
-<div class="section" id="case-2-case-1-4n">
-<h2>Case 2: case 1 的 4N 模式<a class="headerlink" href="#case-2-case-1-4n" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-2-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv-4n-mode">
+<h2>Case 2: decoding with bm-ffmpeg and preprocessing with bmcv, 4N-mode<a class="headerlink" href="#case-2-decoding-with-bm-ffmpeg-and-preprocessing-with-bmcv-4n-mode" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>The pipeline in case 2 is the same as that in case 1.
 But the batchsize in case 4 is 4.
@@ -244,14 +274,14 @@ We want use this case to show you that,
 if you are using int8 computing units, batchsize is recommanded as 4 or multiples of 4.
 At this situation, you can use the TPU to its fullest.</div></blockquote>
 </div>
-<div class="section" id="case-3-bm-opencv">
-<h2>Case 3: 使用 bm-opencv 做解码和数据预处理<a class="headerlink" href="#case-3-bm-opencv" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-3-decoding-and-preprocessing-with-bm-opencv">
+<h2>Case 3: decoding and preprocessing with bm-opencv<a class="headerlink" href="#case-3-decoding-and-preprocessing-with-bm-opencv" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>This case is suitale for SOC mode only.
 The form of calling bm-opencv in SOC mode is almost the same as calling opencv(public released) in PCIE mode.</div></blockquote>
 </div>
-<div class="section" id="case-4-bm-opencv-bmcv">
-<h2>Case 4: 使用 bm-opencv 做解码，使用 bmcv 做预处理<a class="headerlink" href="#case-4-bm-opencv-bmcv" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-4-decoding-with-bm-opencv-and-preprocessing-with-bmcv">
+<h2>Case 4: decoding with bm-opencv and preprocessing with bmcv<a class="headerlink" href="#case-4-decoding-with-bm-opencv-and-preprocessing-with-bmcv" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div>This case is suitale for SOC mode only.
 The form of calling bm-opencv in SOC mode is almost the same as calling opencv(public released) in PCIE mode.</div></blockquote>
@@ -266,10 +296,10 @@ The form of calling bm-opencv in SOC mode is almost the same as calling opencv(p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../3_yolov3.html" class="btn btn-neutral float-right" title="使用Yolov3对多路视频做目标检测" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../3_yolov3.html" class="btn btn-neutral float-right" title="Detection with Yolov3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cpp.html" class="btn btn-neutral float-left" title="C++代码解析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cpp.html" class="btn btn-neutral float-left" title="C++ Codes Explanation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

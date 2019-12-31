@@ -1,11 +1,12 @@
-Python代码解析
-______________
+Python Codes Explanation
+________________________
 
-Case 0: 使用 opencv 解码和数据预处理
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 0: decoding and preprocessing with opencv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    在该示例中，我们封装了一个函数，完成目标检测的任务，如下：
-
+    In case 0, we exploit a bmodel converted from ssd300-vgg16 to detect objects from videos or images.
+    We encapsulated an "inference" function to complete it.
+    The definition of the function is:
         .. code-block:: python
 
            def inference(bmodel_path, input_path, loops, tpu_id, compare_path):
@@ -21,8 +22,33 @@ Case 0: 使用 opencv 解码和数据预处理
                True for success and False for failure
              """
 
-    在该函数中，我们通过循环处理视频的连续帧来模拟真实的目标检测业务。
-    在本示例程序中，我们使用 opencv 进行视频解码和预处理。
+    In this function, we first initialize a sail::Engine instance with specified device,
+    and load a bmodel into this sail::Engine instance.
+
+        .. code-block:: python
+
+           # init Engine and load bmodel
+           engine = sail.Engine(bmodel_path, tpu_id, sail.IOMode.SYSIO)
+
+
+    We also need to initialize instances from PreProcessor, PostProcessor and Decoder.
+    
+    In this case, the decoder we used is the VideoCapture of opencv, we use it to decode videos or images.
+
+    The PreProcessor and PostProcessor are classes just defined in this script.
+    Preprocessing contains some resizing or scaling to original input tensor,
+    while postprocessing contains bbox transformation and non-max suppression.
+
+        .. code-block:: python
+
+           class PreProcessor:
+             """ Preprocessing class.
+             """
+
+           class PostProcessor:
+             """ Postprocessing class.
+
+    In the for-loop, there is a pipeline of the inference of detection:
 
         .. code-block:: python
 
@@ -44,11 +70,16 @@ Case 0: 使用 opencv 解码和数据预处理
              # ...
 
 
-Case 1: 使用 bm-ffmpeg 解码、使用 bmcv 做预处理
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 1: decoding with bm-ffmpeg and preprocessing with bmcv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    在该示例程序中，我们使用 bm-ffmpeg 做解码，bmcv 库做预处理。
-    我们已经在 SAIL 封装了 bm-ffmpeg 与 bmcv 的 API，因此用户无需关注其底层实现。
+    In case 1, we use bm-ffmpeg and bmcv for decoding and preprocessing.
+    But you don't need to concern about the implementation of bm-ffmpeg and bmcv.
+    We have already encapsulated them into SAIL.
+
+    For decoding, sail::Decoder is based on bm-ffmpeg to help you decode videos and images.
+    Just treat sail::Decoder as cv::VideoCapture, while sail::BMImage as cv::Mat,
+    you can easily understand the code below:
 
         .. code-block:: python
 
@@ -62,10 +93,12 @@ Case 1: 使用 bm-ffmpeg 解码、使用 bmcv 做预处理
 
 
 
+    And sail::Bmcv is used for preprocessing.
+    Other codes are almost the same with case 0.
 
 
-Case 2: case 1 的 4N 模式
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 2: decoding with bm-ffmpeg and preprocessing with bmcv, 4N-mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     The pipeline in case 2 is the same as that in case 1.
     But the batchsize in case 4 is 4.
@@ -75,14 +108,14 @@ Case 2: case 1 的 4N 模式
 
 
 
-Case 3: 使用 bm-opencv 做解码和数据预处理
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 3: decoding and preprocessing with bm-opencv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     This case is suitale for SOC mode only.
     The form of calling bm-opencv in SOC mode is almost the same as calling opencv(public released) in PCIE mode.
 
-Case 4: 使用 bm-opencv 做解码，使用 bmcv 做预处理
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 4: decoding with bm-opencv and preprocessing with bmcv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     This case is suitale for SOC mode only.
     The form of calling bm-opencv in SOC mode is almost the same as calling opencv(public released) in PCIE mode.

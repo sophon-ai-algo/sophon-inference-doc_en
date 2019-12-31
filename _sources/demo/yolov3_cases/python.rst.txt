@@ -1,10 +1,23 @@
-Python代码解析
-______________
+Python Codes Explanation
+________________________
 
-Case 0: 使用 opencv 做解码和数据预处理
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case 0: decoding and preprocessing with opencv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    如下，我们使用了一个 while 循环来模拟真实的目标检测业务：
+    In this case, we detect objects in multiple videos with a bmodel converted by yolov3.
+    We use public released opencv to decode videos and process images.
+    In the function of inference, we first initialize instances of sail::Engine:
+    
+        .. code-block:: python
+
+           # ...
+           net = sail.Engine(bmodel_path, tpu_id, sail.IOMode.SYSIO)
+           
+           # ...
+
+
+    Then, we use a while-loop to process each frame of the input video.
+    The core of the pipeline are decoding, preprocessing, inference, postprocessing.
     
         .. code-block:: python
 

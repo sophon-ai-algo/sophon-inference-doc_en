@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>运行demo &mdash; SophonInference  documentation</title>
+  <title>Usage &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="C++代码解析" href="cpp.html" />
-    <link rel="prev" title="使用MTCNN进行人脸检测" href="../4_mtcnn.html" /> 
+    <link rel="next" title="C++ Codes Explanation" href="cpp.html" />
+    <link rel="prev" title="Detection with MTCNN" href="../4_mtcnn.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,26 +81,26 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../0_get_start.html">快速入门</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../1_demo.html">示例程序</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../0_preface.html">前言</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1_resnet50.html">使用 Resnet-50 进行图像分类</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2_ssd.html">使用SSD对图像和视频进行目标检测</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3_yolov3.html">使用Yolov3对多路视频做目标检测</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../4_mtcnn.html">使用MTCNN进行人脸检测</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">运行demo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#bmodel">获取bmodel和图片</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#c">运行C++程序</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#python">运行python程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../0_get_start.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../1_demo.html">Practical Demos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_preface.html">Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_resnet50.html">Classification with Resnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2_ssd.html">Detection with SSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_yolov3.html">Detection with Yolov3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../4_mtcnn.html">Detection with MTCNN</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get-model-and-data">Get model and data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-c-cases">Run C++ cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-python-cases">Run python cases</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="cpp.html">C++代码解析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python.html">Python代码解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp.html">C++ Codes Explanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html">Python Codes Explanation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API Reference</a></li>
 </ul>
 
             
@@ -146,11 +146,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../1_demo.html">示例程序</a> &raquo;</li>
+          <li><a href="../../1_demo.html">Practical Demos</a> &raquo;</li>
         
-          <li><a href="../4_mtcnn.html">使用MTCNN进行人脸检测</a> &raquo;</li>
+          <li><a href="../4_mtcnn.html">Detection with MTCNN</a> &raquo;</li>
         
-      <li>运行demo</li>
+      <li>Usage</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,12 +169,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="demo">
-<h1>运行demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="bmodel">
-<h2>获取bmodel和图片<a class="headerlink" href="#bmodel" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-model-and-data">
+<h2>Get model and data<a class="headerlink" href="#get-model-and-data" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>使用 “download.py” 下载所需的模型和数据.</p>
+<div><p>To run this demo, we need a fp32 bmodel of mtcnn.
+We also need a face image to be detected.
+We can get them through the script “download.py”.</p>
 <blockquote>
 <div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 download.py mtcnn_fp32.bmodel
 python3 download.py face.jpg
@@ -183,8 +185,8 @@ python3 download.py face.jpg
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="c">
-<h2>运行C++程序<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-c-cases">
+<h2>Run C++ cases<a class="headerlink" href="#run-c-cases" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>For case 0:</p>
 <blockquote>
@@ -194,8 +196,8 @@ python3 download.py face.jpg
 </div></blockquote>
 </div></blockquote>
 </div>
-<div class="section" id="python">
-<h2>运行python程序<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-python-cases">
+<h2>Run python cases<a class="headerlink" href="#run-python-cases" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>For case 0:</p>
 <blockquote>
@@ -215,10 +217,10 @@ python3 download.py face.jpg
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cpp.html" class="btn btn-neutral float-right" title="C++代码解析" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cpp.html" class="btn btn-neutral float-right" title="C++ Codes Explanation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../4_mtcnn.html" class="btn btn-neutral float-left" title="使用MTCNN进行人脸检测" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../4_mtcnn.html" class="btn btn-neutral float-left" title="Detection with MTCNN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

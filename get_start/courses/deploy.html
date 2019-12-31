@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>使用SAIL驱动TPU加载bmodel并进行推理 &mdash; SophonInference  documentation</title>
+  <title>deploy bmodel on Sophon SC5 using sail &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="示例程序" href="../../1_demo.html" />
-    <link rel="prev" title="使用 bmnett 将 mobilenet 编译为 bmodel" href="convert.html" /> 
+    <link rel="next" title="Practical Demos" href="../../1_demo.html" />
+    <link rel="prev" title="convert tensorflow frozen model to bmodel using bmnett" href="convert.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,19 +81,19 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">快速入门</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../0_hardware.html">算丰硬件产品概览</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1_software.html">算丰软件产品概览</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">小试牛刀：模型部署</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="install.html">依赖软件安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="convert.html">使用 bmnett 将 mobilenet 编译为 bmodel</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">使用SAIL驱动TPU加载bmodel并进行推理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_products.html">Sophon TPU Choices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_introduction.html">Sophon Software Stack</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">Crash Course</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">install required softwares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="convert.html">convert tensorflow frozen model to bmodel using bmnett</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">deploy bmodel on Sophon SC5 using sail</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">示例程序</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API 参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">Practical Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API Reference</a></li>
 </ul>
 
             
@@ -139,11 +139,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../0_get_start.html">快速入门</a> &raquo;</li>
+          <li><a href="../../0_get_start.html">Getting Started</a> &raquo;</li>
         
-          <li><a href="../2_crash_course.html">小试牛刀：模型部署</a> &raquo;</li>
+          <li><a href="../2_crash_course.html">Crash Course</a> &raquo;</li>
         
-      <li>使用SAIL驱动TPU加载bmodel并进行推理</li>
+      <li>deploy bmodel on Sophon SC5 using sail</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,8 +162,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sailtpubmodel">
-<h1>使用SAIL驱动TPU加载bmodel并进行推理<a class="headerlink" href="#sailtpubmodel" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="deploy-bmodel-on-sophon-sc5-using-sail">
+<h1>deploy bmodel on Sophon SC5 using sail<a class="headerlink" href="#deploy-bmodel-on-sophon-sc5-using-sail" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
@@ -193,10 +193,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../1_demo.html" class="btn btn-neutral float-right" title="示例程序" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../1_demo.html" class="btn btn-neutral float-right" title="Practical Demos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="convert.html" class="btn btn-neutral float-left" title="使用 bmnett 将 mobilenet 编译为 bmodel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="convert.html" class="btn btn-neutral float-left" title="convert tensorflow frozen model to bmodel using bmnett" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
