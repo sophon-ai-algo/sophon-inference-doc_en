@@ -1,13 +1,15 @@
-convert tensorflow frozen model to bmodel using bmnett
-______________________________________________________
-We have already uploaded the official tensorflow frozen model of mobilenetv1 on our website, just "wget" it!
+使用 bmnett 将 mobilenet 编译为 bmodel
+______________________________________
+
+我们已经在官网上传了一份 tensorflow mobilenet 的模型，直接下载即可：
 
     .. code-block:: shell
 
        wget https://sophon-file.bitmain.com.cn/sophon-prod/model/19/05/28/mobilenetv1_tf.tar.gz
        tar -zxvf mobilenetv1_tf.tar.gz
 
-Then, convert tensorflow frozen model to bmodel using bmnett, as follow script:
+
+然后，使用下面的脚本将模型编译为 bmodel：
 
     .. code-block:: python
 
@@ -24,7 +26,8 @@ Then, convert tensorflow frozen model to bmodel using bmnett, as follow script:
 
        bmnett.compile(model_path, outdir, target, input_names, output_names, shapes=shapes, net_name=net_name)
 
-After conversion, a bmodel named "compilation.bmodel" will generated under ${outdir}.
+
+运行结束之后，在上面脚本指定的${outdir}目录下，会生成 compilation.bmodel.
 
 
 

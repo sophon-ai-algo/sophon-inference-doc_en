@@ -1,8 +1,8 @@
-Detection with MTCNN
-====================
+使用MTCNN进行人脸检测
+=====================
 
-In this Demo, we use mtcnn to detect faces in images. 
-The bmodel used in this demo are already converted from official yolov3, to fp32 data type.
+在本节中，我们使用 mtcnn 做人脸检测。
+
 
 +----+-------+---------+--------------+-----------+-------+---------+--------------+------------+-------------+
 | ID | Input | Decoder | Preprocessor | Data Type | Model | Mode    | Model Number | TPU Number | Multi-Thread|

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>convert tensorflow frozen model to bmodel using bmnett &mdash; SophonInference  documentation</title>
+  <title>使用 bmnett 将 mobilenet 编译为 bmodel &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="deploy bmodel on Sophon SC5 using sail" href="deploy.html" />
-    <link rel="prev" title="install required softwares" href="install.html" /> 
+    <link rel="next" title="使用SAIL驱动TPU加载bmodel并进行推理" href="deploy.html" />
+    <link rel="prev" title="依赖软件安装" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,19 +81,19 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">Getting Started</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../0_products.html">Sophon TPU Choices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1_introduction.html">Sophon Software Stack</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">Crash Course</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="install.html">install required softwares</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">convert tensorflow frozen model to bmodel using bmnett</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deploy.html">deploy bmodel on Sophon SC5 using sail</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../0_get_start.html">快速入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../0_hardware.html">算丰硬件产品概览</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_software.html">算丰软件产品概览</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../2_crash_course.html">小试牛刀：模型部署</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">依赖软件安装</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">使用 bmnett 将 mobilenet 编译为 bmodel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deploy.html">使用SAIL驱动TPU加载bmodel并进行推理</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">Practical Demos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../1_demo.html">示例程序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_module.html">API 参考</a></li>
 </ul>
 
             
@@ -139,11 +139,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../0_get_start.html">Getting Started</a> &raquo;</li>
+          <li><a href="../../0_get_start.html">快速入门</a> &raquo;</li>
         
-          <li><a href="../2_crash_course.html">Crash Course</a> &raquo;</li>
+          <li><a href="../2_crash_course.html">小试牛刀：模型部署</a> &raquo;</li>
         
-      <li>convert tensorflow frozen model to bmodel using bmnett</li>
+      <li>使用 bmnett 将 mobilenet 编译为 bmodel</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,16 +162,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="convert-tensorflow-frozen-model-to-bmodel-using-bmnett">
-<h1>convert tensorflow frozen model to bmodel using bmnett<a class="headerlink" href="#convert-tensorflow-frozen-model-to-bmodel-using-bmnett" title="Permalink to this headline">¶</a></h1>
-<p>We have already uploaded the official tensorflow frozen model of mobilenetv1 on our website, just “wget” it!</p>
+  <div class="section" id="bmnett-mobilenet-bmodel">
+<h1>使用 bmnett 将 mobilenet 编译为 bmodel<a class="headerlink" href="#bmnett-mobilenet-bmodel" title="Permalink to this headline">¶</a></h1>
+<p>我们已经在官网上传了一份 tensorflow mobilenet 的模型，直接下载即可：</p>
 <blockquote>
 <div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget https://sophon-file.bitmain.com.cn/sophon-prod/model/19/05/28/mobilenetv1_tf.tar.gz
 tar -zxvf mobilenetv1_tf.tar.gz
 </pre></div>
 </div>
 </div></blockquote>
-<p>Then, convert tensorflow frozen model to bmodel using bmnett, as follow script:</p>
+<p>然后，使用下面的脚本将模型编译为 bmodel：</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">bmnett</span>
@@ -188,7 +188,7 @@ tar -zxvf mobilenetv1_tf.tar.gz
 </pre></div>
 </div>
 </div></blockquote>
-<p>After conversion, a bmodel named “compilation.bmodel” will generated under ${outdir}.</p>
+<p>运行结束之后，在上面脚本指定的${outdir}目录下，会生成 compilation.bmodel.</p>
 </div>
 
 
@@ -199,10 +199,10 @@ tar -zxvf mobilenetv1_tf.tar.gz
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy.html" class="btn btn-neutral float-right" title="deploy bmodel on Sophon SC5 using sail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy.html" class="btn btn-neutral float-right" title="使用SAIL驱动TPU加载bmodel并进行推理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral float-left" title="install required softwares" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral float-left" title="依赖软件安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

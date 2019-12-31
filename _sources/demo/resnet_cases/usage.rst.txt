@@ -1,22 +1,21 @@
-Usage
-_____
+运行demo
+________
 
 
-Get model and data
-^^^^^^^^^^^^^^^^^^
+获取bmodel和图片
+^^^^^^^^^^^^^^^^
 
-    To run this demo, we need both fp32 and int8 bmodels of a resnet50.
-    We also need an image to be classified.
-    We can get them through the script "download.py". 
-
+    在运行 demo 之前，我们需要下载 rensnet50 的 fp32_bmodel 和 int8_bmodel。
+    另外，也需要一张图片作为待处理的输入。
+    我们可以使用 ”dowload.py“ 下载。
         .. code-block:: shell
           
            python3 download.py resnet50_fp32.bmodel 
            python3 download.py resnet50_int8.bmodel
            python3 download.py cls.jpg
 
-Run C++ cases
-^^^^^^^^^^^^^
+运行C++程序
+^^^^^^^^^^^
 
     For case 0:
     
@@ -60,8 +59,8 @@ Run C++ cases
 
 
 
-Run python cases
-^^^^^^^^^^^^^^^^
+运行python程序
+^^^^^^^^^^^^^^
 
     For case 0:
 

@@ -1,5 +1,5 @@
-deploy bmodel on Sophon SC5 using sail
-______________________________________
+使用SAIL驱动TPU加载bmodel并进行推理
+___________________________________
 
     .. code-block:: python
 

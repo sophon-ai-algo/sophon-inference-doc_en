@@ -202,6 +202,36 @@ We can get parameters, like graph_name, input_name and so on, from the sail::Eng
 </pre></div>
 </div>
 </div></blockquote>
+<p>Actually, you can get this information by using the “bm_model.bin” tool in BMNNSDK:</p>
+<blockquote>
+<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># fp32_bmodel</span>
+bitmain@bitmain:~$ bm_model.bin --info resnet50_fp32_191115.bmodel
+<span class="c1"># bmodel version: B.2.2</span>
+<span class="c1"># chip: BM1684</span>
+<span class="c1"># create time: Sat Nov 23 14:37:37 2019</span>
+<span class="c1">#</span>
+<span class="c1"># ==========================================</span>
+<span class="c1"># net: [ResNet-50_fp32]  index: [0]</span>
+<span class="c1"># ------------</span>
+<span class="c1"># stage: [0]  static</span>
+<span class="c1"># input: data, [1, 3, 224, 224], float32</span>
+<span class="c1"># output: fc1000, [1, 1000], float32</span>
+
+<span class="c1"># int8_bmodel</span>
+<span class="c1"># bitmain@bitmain:~$ bm_model.bin --info resnet50_int8_191115.bmodel</span>
+<span class="c1"># bmodel version: B.2.2</span>
+<span class="c1"># chip: BM1684</span>
+<span class="c1"># create time: Sat Nov 23 14:38:50 2019</span>
+<span class="c1">#</span>
+<span class="c1"># ==========================================</span>
+<span class="c1"># net: [ResNet-50_int8]  index: [0]</span>
+<span class="c1"># ------------</span>
+<span class="c1"># stage: [0]  static</span>
+<span class="c1"># input: data, [1, 3, 224, 224], int8</span>
+<span class="c1"># output: fc1000, [1, 1000], int8</span>
+</pre></div>
+</div>
+</div></blockquote>
 <p>The input_path is the path of an arbitary image.
 We supplied ready-made bmodels and images, the script ${sophon-inference}/tools/download.py can help you get them.</p>
 <p>The tpu_id indicates which TPU you want to use.

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Detection with MTCNN &mdash; SophonInference  documentation</title>
+  <title>使用MTCNN进行人脸检测 &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Usage" href="mtcnn_cases/usage.html" />
-    <link rel="prev" title="Python Codes Explanation" href="yolov3_cases/python.html" /> 
+    <link rel="next" title="运行demo" href="mtcnn_cases/usage.html" />
+    <link rel="prev" title="Python代码解析" href="yolov3_cases/python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,21 +81,21 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../0_get_start.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../1_demo.html">Practical Demos</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="0_preface.html">Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1_resnet50.html">Classification with Resnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_ssd.html">Detection with SSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_yolov3.html">Detection with Yolov3</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Detection with MTCNN</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/usage.html">Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/cpp.html">C++ Codes Explanation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/python.html">Python Codes Explanation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_get_start.html">快速入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../1_demo.html">示例程序</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0_preface.html">前言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_resnet50.html">使用 Resnet-50 进行图像分类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_ssd.html">使用SSD对图像和视频进行目标检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_yolov3.html">使用Yolov3对多路视频做目标检测</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用MTCNN进行人脸检测</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/usage.html">运行demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/cpp.html">C++代码解析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mtcnn_cases/python.html">Python代码解析</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_module.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_module.html">API 参考</a></li>
 </ul>
 
             
@@ -141,9 +141,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../1_demo.html">Practical Demos</a> &raquo;</li>
+          <li><a href="../1_demo.html">示例程序</a> &raquo;</li>
         
-      <li>Detection with MTCNN</li>
+      <li>使用MTCNN进行人脸检测</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,10 +162,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="detection-with-mtcnn">
-<h1>Detection with MTCNN<a class="headerlink" href="#detection-with-mtcnn" title="Permalink to this headline">¶</a></h1>
-<p>In this Demo, we use mtcnn to detect faces in images.
-The bmodel used in this demo are already converted from official yolov3, to fp32 data type.</p>
+  <div class="section" id="mtcnn">
+<h1>使用MTCNN进行人脸检测<a class="headerlink" href="#mtcnn" title="Permalink to this headline">¶</a></h1>
+<p>在本节中，我们使用 mtcnn 做人脸检测。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="4%" />
@@ -208,17 +207,17 @@ The bmodel used in this demo are already converted from official yolov3, to fp32
 </table>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/usage.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#get-model-and-data">Get model and data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#run-c-cases">Run C++ cases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#run-python-cases">Run python cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/usage.html">运行demo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#bmodel">获取bmodel和图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#c">运行C++程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/usage.html#python">运行python程序</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/cpp.html">C++ Codes Explanation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/cpp.html">C++代码解析</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/cpp.html#case-0">Case 0</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/python.html">Python Codes Explanation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="mtcnn_cases/python.html">Python代码解析</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mtcnn_cases/python.html#case-0">Case 0</a></li>
 </ul>
 </li>
@@ -234,10 +233,10 @@ The bmodel used in this demo are already converted from official yolov3, to fp32
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mtcnn_cases/usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mtcnn_cases/usage.html" class="btn btn-neutral float-right" title="运行demo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="yolov3_cases/python.html" class="btn btn-neutral float-left" title="Python Codes Explanation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="yolov3_cases/python.html" class="btn btn-neutral float-left" title="Python代码解析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

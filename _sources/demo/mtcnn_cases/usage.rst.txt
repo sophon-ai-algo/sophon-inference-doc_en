@@ -1,21 +1,19 @@
-Usage
-_____
+运行demo
+________
 
 
-Get model and data
-^^^^^^^^^^^^^^^^^^
+获取bmodel和图片
+^^^^^^^^^^^^^^^^
 
-    To run this demo, we need a fp32 bmodel of mtcnn.
-    We also need a face image to be detected.
-    We can get them through the script "download.py". 
+    使用 "download.py" 下载所需的模型和数据. 
 
         .. code-block:: shell
           
            python3 download.py mtcnn_fp32.bmodel 
            python3 download.py face.jpg
 
-Run C++ cases
-^^^^^^^^^^^^^
+运行C++程序
+^^^^^^^^^^^
 
     For case 0:
     
@@ -24,8 +22,8 @@ Run C++ cases
            ./det_mtcnn --bmodel ./mtcnn_fp32.bmodel --input ./face.jpg
 
 
-Run python cases
-^^^^^^^^^^^^^^^^
+运行python程序
+^^^^^^^^^^^^^^
 
     For case 0:
 

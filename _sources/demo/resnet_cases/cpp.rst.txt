@@ -29,6 +29,37 @@ Case 0: simplest case
            auto out_dtype = engine.get_output_dtype(graph_name, output_name);
 
 
+    Actually, you can get this information by using the "bm_model.bin" tool in BMNNSDK:
+
+        .. code-block:: shell
+
+           # fp32_bmodel
+           bitmain@bitmain:~$ bm_model.bin --info resnet50_fp32_191115.bmodel
+           # bmodel version: B.2.2
+           # chip: BM1684
+           # create time: Sat Nov 23 14:37:37 2019
+           #
+           # ==========================================
+           # net: [ResNet-50_fp32]  index: [0]
+           # ------------
+           # stage: [0]  static
+           # input: data, [1, 3, 224, 224], float32
+           # output: fc1000, [1, 1000], float32
+
+           # int8_bmodel
+           # bitmain@bitmain:~$ bm_model.bin --info resnet50_int8_191115.bmodel
+           # bmodel version: B.2.2
+           # chip: BM1684
+           # create time: Sat Nov 23 14:38:50 2019
+           #
+           # ==========================================
+           # net: [ResNet-50_int8]  index: [0]
+           # ------------
+           # stage: [0]  static
+           # input: data, [1, 3, 224, 224], int8
+           # output: fc1000, [1, 1000], int8
+
+
     The input_path is the path of an arbitary image.
     We supplied ready-made bmodels and images, the script ${sophon-inference}/tools/download.py can help you get them.
 

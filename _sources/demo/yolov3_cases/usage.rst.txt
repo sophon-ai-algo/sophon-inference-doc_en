@@ -1,13 +1,11 @@
-Usage
-_____
+运行demo
+________
 
 
-Get model and data
-^^^^^^^^^^^^^^^^^^
+获取bmodel和视频
+^^^^^^^^^^^^^^^^
 
-    To run this demo, we need both fp32 and int8 bmodels of a yolov3.
-    We also need a video to be detected.
-    We can get them through the script "download.py". 
+    运行”download.py“脚本可以下载所需的模型和数据。
 
         .. code-block:: shell
           
@@ -15,8 +13,8 @@ Get model and data
            python3 download.py yolov3_int8.bmodel
            python3 download.py det.h264
 
-Run C++ cases
-^^^^^^^^^^^^^
+运行C++程序
+^^^^^^^^^^^
 
     For case 0:
     
@@ -35,8 +33,8 @@ Run C++ cases
 
 
 
-Run python cases
-^^^^^^^^^^^^^^^^
+运行python程序
+^^^^^^^^^^^^^^
 
     For case 0:
 

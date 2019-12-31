@@ -1,5 +1,5 @@
-Practical Demos
----------------
+示例程序
+--------
 
 .. toctree::
    :glob:

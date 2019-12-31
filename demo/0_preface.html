@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Preface &mdash; SophonInference  documentation</title>
+  <title>前言 &mdash; SophonInference  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Classification with Resnet" href="1_resnet50.html" />
-    <link rel="prev" title="Practical Demos" href="../1_demo.html" /> 
+    <link rel="next" title="使用 Resnet-50 进行图像分类" href="1_resnet50.html" />
+    <link rel="prev" title="示例程序" href="../1_demo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,20 +81,20 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../0_get_start.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../1_demo.html">Practical Demos</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Preface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#demo-brief">Demo Brief</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#return-values">Return Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0_get_start.html">快速入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../1_demo.html">示例程序</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">前言</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#demo">Demo 摘要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">返回值</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="1_resnet50.html">Classification with Resnet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_ssd.html">Detection with SSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_yolov3.html">Detection with Yolov3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_mtcnn.html">Detection with MTCNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_resnet50.html">使用 Resnet-50 进行图像分类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_ssd.html">使用SSD对图像和视频进行目标检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_yolov3.html">使用Yolov3对多路视频做目标检测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_mtcnn.html">使用MTCNN进行人脸检测</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../2_module.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_module.html">API 参考</a></li>
 </ul>
 
             
@@ -140,9 +140,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../1_demo.html">Practical Demos</a> &raquo;</li>
+          <li><a href="../1_demo.html">示例程序</a> &raquo;</li>
         
-      <li>Preface</li>
+      <li>前言</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,10 +161,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="preface">
-<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="demo-brief">
-<h2>Demo Brief<a class="headerlink" href="#demo-brief" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="id1">
+<h1>前言<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="demo">
+<h2>Demo 摘要<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
@@ -340,40 +340,34 @@
 </tr>
 </tbody>
 </table>
-<p>As the above table shown,
-we prepared several demos to let you get familiar with Sophon-Inference more quickly.
-Both c++ and python are supported.
-For each demo, we implemented different cases to adapt to multiple applications.
-we have four kinds of demos by now:</p>
+<p>如上表所示，我们准备了一系列示例程序以便让你更加快速地熟悉并使用 Sophon Inference。
+每个示例程序都提供了 c++ 和 python 的版本以供参考。
+示例程序分为4个类别，分别对应4种应用：</p>
 <blockquote>
-<div><p><strong>cls_resnet(classification with resnet50)</strong></p>
-<p><strong>det_ssd(detection with ssd300-vgg16)</strong></p>
-<p><strong>det_yolov3(detection with yolov3)</strong></p>
-<p><strong>det_mtcnn(detection with mtcnn)</strong></p>
+<div><p><strong>cls_resnet(基于resnet50的图像分类)</strong></p>
+<p><strong>det_ssd(基于ssd300-vgg16的目标检测)</strong></p>
+<p><strong>det_yolov3(基于yolov3的目标检测，多路视频)</strong></p>
+<p><strong>det_mtcnn(基于mtcnn的人脸检测)</strong></p>
 </div></blockquote>
-<p>The meanings of properties of the cases are explained as follows:</p>
+<p>在每类示例程序中，我们也会使用不同的实现方案以应对各种具体的需求，
+上表中各示例程序的属性含义如下：</p>
 <blockquote>
-<div><p><strong>Binary:</strong> the name of binary file(c++) or script(python) of the case.</p>
-<p><strong>Input:</strong> input date type, image or video.</p>
-<p><strong>Decoder:</strong> libs for decoding the input.
-“opencv” is the public release version of opencv which using CPU for decoding.
-“bm-opencv” and “ffmpeg” are the bitmain versions of opencv and ffmpeg which using VPU for decoding.</p>
-<p><strong>Preprocessor:</strong> libs for processing image or tensor.
-“opencv” is the public release version of opencv which using CPU for caculating.
-“bm-opencv” and “bmcv” are the bitmain versions for processing image or tensor.</p>
-<p><strong>Data Type:</strong> data type of the bmodel to be used, fp32 or int8.</p>
-<p><strong>Model:</strong> the name of deep learning model used in this case.</p>
-<p><strong>Mode:</strong> two modes, static mean input tensor shapes of bmodel are unchanged,
-while dynamic means input tensor shapes of bmodel can be changed.</p>
-<p><strong>Model Number:</strong> how many models are supported concurrently in this case.</p>
-<p><strong>TPU Number:</strong> how many TPUs are supported at the same time.</p>
-<p><strong>Batch Size:</strong> the batchsize of the bmodel we used.</p>
-<p><strong>Multi Thread:</strong>: how many threads are supported at the same time.</p>
+<div><p><strong>Binary:</strong> 可执行程序(c++)或脚本(python)的名称。</p>
+<p><strong>Input:</strong> 输入的数据类型，图像或者视频。</p>
+<p><strong>Decoder:</strong> 解码图像或者视频使用的依赖库，除 opencv 外，其余模块均调用 TPU 上的硬件单元进行计算。</p>
+<p><strong>Preprocessor:</strong> 图像预处理或张量计算的依赖库，除 opencv 外，其余模块均调用 TPU 上的硬件单元进行计算。</p>
+<p><strong>Data Type:</strong> bmodel 的数据类型，fp32 或 int8.</p>
+<p><strong>Model:</strong> 示例程序中使用的深度学习模型名称。</p>
+<p><strong>Mode:</strong> 动态或者静态模式，静态代表 bmodel 的输入张量尺寸不可变，动态代表可变。</p>
+<p><strong>Model Number:</strong> 示例程序同时加载的模型数量。</p>
+<p><strong>TPU Number:</strong> 示例程序同时使用的 TPU 数量。</p>
+<p><strong>Batch Size:</strong> 模型输入张量的 batch 大小。即，N 维度。</p>
+<p><strong>Multi Thread:</strong>: 示例程序使用的线程数量。</p>
 </div></blockquote>
 </div>
-<div class="section" id="return-values">
-<h2>Return Values<a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
-<p>We also defined a return value list for each case, for reference.</p>
+<div class="section" id="id2">
+<h2>返回值<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>我们也定义了一个返回值列表，供调试参考。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -407,10 +401,10 @@ while dynamic means input tensor shapes of bmodel can be changed.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="1_resnet50.html" class="btn btn-neutral float-right" title="Classification with Resnet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="1_resnet50.html" class="btn btn-neutral float-right" title="使用 Resnet-50 进行图像分类" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../1_demo.html" class="btn btn-neutral float-left" title="Practical Demos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../1_demo.html" class="btn btn-neutral float-left" title="示例程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
