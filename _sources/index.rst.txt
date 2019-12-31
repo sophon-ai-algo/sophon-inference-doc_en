@@ -6,7 +6,7 @@
 Sophon Inference User Manual
 ============================
 
-.. figure:: ../source_common/_static/logo.png
+.. figure:: ../images/logo.png
    :width: 400px
    :height: 400px
    :scale: 50%
@@ -42,30 +42,18 @@ Sophon Inference User Manual
      V2.0.1     2019.11.15   First official release
     ========== ============ ========================
 
-Sophon Inference Quickstart
----------------------------
+
 .. toctree::
    :glob:
+   :maxdepth: 4
 
-   quickstart/abstract
-   quickstart/install
-   quickstart/reminds
-   quickstart/tools-
+   0_get_start
+   1_demo
+   2_module
 
-Sophon Inference Modules
-------------------------
-.. toctree::
-   :glob:
 
-   module/sail
-   module/sail_cpp
-   module/sail_python
 
-Sophon Inference Samples
-------------------------
-.. toctree::
-   :glob:
 
-   demo/release_cpp
-   demo/release_python
+
+
 
